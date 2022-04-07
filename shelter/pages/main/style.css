@@ -529,3 +529,102 @@ h4 {
     width: 300px;
     height: 310px;
 }
+
+@media (max-width: 1270px) {
+    .header-container {
+        padding-top: 3.9%;
+    }
+    .header {
+        width: 92.19%;
+    }
+    .start {
+        height: 1165px;
+        margin-top: -90px;
+    }
+    .start-content {
+        align-self: flex-end;
+        margin-top: 6.5%;
+        margin-left: -0.1%;
+    }
+    .start-button {
+        align-self: center;
+    }
+    .start-puppy {
+        margin-left: 22%;
+    }
+    .puppy {
+        width: 569px;
+        height: 593px;
+    }
+    .about {
+        height: 1048px;
+        /* gap: 40px; */
+    }
+    .about-title {
+        margin-top: 7.7%;
+    }
+    .description {
+        margin-top: -0.2%;
+        margin-bottom: -69.5%;
+    }
+    .card:nth-child(n+3) {
+        display: none;
+    }
+    .slider-with-arrow {
+        gap: 12px;
+    }
+    .slider {
+        gap: 40px;
+    }
+    .arrow {
+        margin-top: 27.2%;
+    }
+    .our-friends-title {
+        margin-top: 10.5%;
+    }
+    .our-friends-button {
+        margin-top: 0.3%;
+    }
+    .how-help {
+        margin-top: -0.4%;
+        height: 779px;
+    }
+    .help-list {
+        column-gap: 60px;
+    }
+    .help-list-item {
+        width: 170px;
+        height: 113px;
+    }
+    .donation-dog {
+        order: 2;
+    }
+    .donation-body {
+        order: 1;
+    }
+    .donation-section {
+        margin-top: 3px;
+        height: 783px;
+    }
+    .donation{
+        gap: 60px;
+        justify-content: center;
+        height: 603px;
+    }
+    .footer-container {
+        height: 639px;
+    }
+    .footer {
+        justify-content: center;
+        gap: 60px;
+        /* padding: 0 30px; */
+        padding-top: 15px;
+        width: 93,75%;
+        width: 100%;
+        height: 100%;
+    }
+    .footer-dog {
+        margin-top: 3px;
+    }
+
+}
