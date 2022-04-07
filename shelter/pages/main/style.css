@@ -384,3 +384,148 @@ h4 {
     letter-spacing: 1.2px;
     color: var(color-dark-i);
 }
+.donation-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 462px;
+    background-color: var(--color-light-l);
+}
+.donation {
+    margin-top: 80px;
+    display: flex;
+    max-width: 915px;
+    height: 282px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+.donation-dog {
+    width: 505px;
+    height: 261px;
+}
+.donation-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 380px;
+    height: 282px;
+}
+.donation-title {
+    text-align: left;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 2.1px;
+    color: var(color-dark-i);
+    /* margin-top: -3%; */
+}
+.donation-subtitle {
+    text-align: left;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16.5px;
+    letter-spacing: 0.9px;
+    color: var(color-dark-l);
+}
+.donation-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 9px;
+    background: var(--color-primary);
+    width: 349px;
+    height: 43px;
+    text-decoration: none; 
+}
+.donation-card:hover {
+    cursor: pointer;
+    background: var(--color-primary-light);
+}
+.donation-card-img {
+    width: 30px;
+    height: 23px;
+}
+.number-card {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 1.1px;
+    color: var(--color-dark-i);
+}
+.legal-information {
+    font-family: Arial;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--color-dark-m);
+}
+.footer-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+    background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
+}
+.footer {
+    padding: 0 40px;
+    padding-top: 40px;
+    gap: 160px;
+    width: 93,75%;
+    height: 310px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-questions {
+    margin-top: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 278px;
+    height: 234px;
+}
+.questions-title {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 2px;
+    color: var(--color-light-xl);
+}
+.waiting-title {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 2.2px;
+    color: var(--color-light-xl);
+}
+.footer-waiting {
+    margin-top: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 302px;
+    height: 234px;
+}
+.mail, .phone, .first-marker, .second-marker {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-family: Georgia;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 1.2px;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.footer-dog {
+    width: 300px;
+    height: 310px;
+}
