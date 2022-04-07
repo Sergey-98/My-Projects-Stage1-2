@@ -182,3 +182,205 @@ h4 {
     margin: 0 auto;
     display: flex;
 }
+.about {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 120px;
+    margin: 0 auto;
+    width: 100%;
+    height: 588px;
+}
+.about-block {
+    padding-top: 6.2%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    /* width: 50%; */
+}
+.about-title {
+    margin-top: 3.7%;
+    width: 430px;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 2.1px;
+    color: var(--color-light-i);
+}
+.description {
+    margin-top: -0.32%;
+    width: 430px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--color-dark-xl);
+}
+.about-pets {
+    padding-top: 6.2%;
+}
+.our-friend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 58px;
+    background-color: var(--color-light-l);
+    padding-bottom: 100px;
+}
+.our-friends-title {
+    text-align: center;
+    margin-top: 6.3%;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 2.1px;
+    color: var(color-dark-i);
+}
+.slider-with-arrow {
+    display: flex;
+    gap: 53px;
+}
+.arrow {
+    margin-top: 16%;
+    width: 52px;
+    height: 52px;
+    background: inherit;
+    border-radius: 50%;
+    color: var(--color-light-3xl);
+    border: 2px solid var(--color-primary);
+}
+.arrow:hover {
+    cursor: pointer;
+    border: 2px solid var(--color-primary-light);
+    background: var(--color-primary-light);
+}
+.slider {
+    display: flex;
+    gap: 90px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.card-title {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22.72px;
+    letter-spacing: 1.2px;
+    color: var(--color-dark-i);
+}
+.card-img {
+    width: 270px;
+    height: 270px;
+}
+.card {
+    width: 270px;
+    height: 435px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-light-s);
+}
+.card:hover {
+    cursor: pointer;
+    border-radius: 9px;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    background-color: var(--color-white);
+}
+.card-button {
+    width: 187px;
+    height: 52px;
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+    background: inherit;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22.1px;
+    letter-spacing: 1px;
+    color: var(--color-light-3xl);
+}
+.card-button:hover {
+    cursor: pointer;
+    border: 2px solid var(--color-primary-light);
+    background: var(--color-primary-light);
+}
+.our-friends-button {
+    margin-top: 0.2%;
+    width: 260px;
+    height: 52px;
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+    background: var(--color-primary);
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22.1px;
+    letter-spacing: 1px;
+    color: var(--color-light-3xl);
+}
+.our-friends-button:hover { 
+    cursor: pointer;
+    border: 2px solid var(--color-primary-light);
+    background: var(--color-primary-light);
+}
+.how-help {
+    margin: 0 auto;
+    height: 611px;
+    /* margin-top: -82px; */
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    /* margin-bottom: 82px; */
+}
+.how-help-title {
+    text-align: center;
+    margin-top: -1.6%;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 2.1px;
+    color: var(color-dark-i);
+    height: 90px;
+}
+.help-list {
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    justify-content: center;
+    list-style: none;
+    column-gap: 120px;
+    row-gap: 55px;
+}
+.help-list-item {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+.help-list-item-icon {
+    width: 60px;
+    height: 60px;
+}
+.help-list-item-title {
+    text-align: center;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 1.2px;
+    color: var(color-dark-i);
+}
