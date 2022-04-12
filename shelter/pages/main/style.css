@@ -121,9 +121,12 @@ h4 {
     background-color: var(--color-primary);
     /* transition: width 0.5s; */
 }
-.nav-link:hover::after {
+/* .nav-link:hover::after {
     cursor: pointer;
     width: 100%;
+} */
+.nav-link:hover {
+    color: var(--color-light-s);
 }
 .b-hamburger {
     display: none;
@@ -215,7 +218,7 @@ h4 {
     font-size: 35px;
     line-height: 45px;
     letter-spacing: 2.1px;
-    color: var(--color-light-i);
+    color: var(--color-dark-i);
 }
 .description {
     margin-top: -0.32%;
@@ -250,7 +253,7 @@ h4 {
     font-size: 35px;
     line-height: 45.5px;
     letter-spacing: 2.1px;
-    color: var(color-dark-i);
+    color: var(--color-dark-i);
 }
 .slider-with-arrow {
     display: flex;
@@ -360,7 +363,7 @@ h4 {
     font-size: 35px;
     line-height: 45.5px;
     letter-spacing: 2.1px;
-    color: var(color-dark-i);
+    color: var(--color-dark-i);
     height: 90px;
 }
 .help-list {
@@ -389,7 +392,7 @@ h4 {
     font-size: 20px;
     line-height: 23px;
     letter-spacing: 1.2px;
-    color: var(color-dark-i);
+    color: var(--color-dark-i);
 }
 .donation-section {
     display: flex;
