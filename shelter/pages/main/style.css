@@ -29,6 +29,7 @@
 }
 html {
     scroll-behavior: smooth;
+    /* overflow: hidden; */
 }
 h4 {
     font-weight: 400;
@@ -53,9 +54,13 @@ h4 {
     height: 60px;
 }
 .logo {
+    text-decoration: none;
     align-items: center;
     width: 184px;
     height: 60px;
+}
+.logo:hover {
+    cursor: pointer;
 }
 .logo-title {
     margin: 0;
@@ -120,7 +125,10 @@ h4 {
     cursor: pointer;
     width: 100%;
 }
-
+.b-hamburger {
+    display: none;
+    padding: 0;
+  }
 /* ---------------main--------------- */
 /* -----start-screen----- */
 .start {
@@ -226,12 +234,13 @@ h4 {
     padding-top: 6.2%;
 }
 .our-friend {
+    height: 877px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 58px;
     background-color: var(--color-light-l);
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
 }
 .our-friends-title {
     text-align: center;
@@ -336,14 +345,12 @@ h4 {
 .how-help {
     margin: 0 auto;
     height: 611px;
-    /* margin-top: -82px; */
     max-width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 60px;
-    /* margin-bottom: 82px; */
 }
 .how-help-title {
     text-align: center;
@@ -524,13 +531,13 @@ h4 {
     color: var(--color-primary);
     text-decoration: none;
 }
-
 .footer-dog {
     width: 300px;
     height: 310px;
 }
 
-@media (max-width: 1270px) {
+
+@media (max-width: 1279px) {
     .header-container {
         padding-top: 3.9%;
     }
@@ -539,7 +546,7 @@ h4 {
     }
     .start {
         height: 1165px;
-        margin-top: -90px;
+        margin-top: -11.7%;
     }
     .start-content {
         align-self: flex-end;
@@ -557,6 +564,7 @@ h4 {
         height: 593px;
     }
     .about {
+        width: 768px;
         height: 1048px;
         /* gap: 40px; */
     }
@@ -590,6 +598,7 @@ h4 {
         height: 779px;
     }
     .help-list {
+        width: 630px;
         column-gap: 60px;
     }
     .help-list-item {
@@ -619,12 +628,387 @@ h4 {
         gap: 60px;
         /* padding: 0 30px; */
         padding-top: 15px;
-        width: 93,75%;
-        width: 100%;
+        /* width: 93,75%; */
+        width: 768px;
         height: 100%;
     }
     .footer-dog {
         margin-top: 3px;
     }
+}
 
+@media (max-width: 767px) {
+    .none {
+        display: none;
+    }
+    html {
+        overflow-x: hidden;
+    }
+    /* html {
+        overflow-x: hidden;
+    }
+    body {
+        position: relative;
+        overflow-x: hidden;
+    } */
+    @keyframes show {
+        from {right: -100%;}
+        to {right: 0%;}
+    }
+    @keyframes hide {
+        from {right: 0%;}
+        to {right: -100%;}
+        
+    }
+    .logo {
+        z-index: 2;
+        margin-top: 6%;
+        margin-left: -1%;
+    }
+    .b-hamburger .h-line{
+        width: 30px;
+        height: 3px;
+        background-color: var(--color-primary);
+        display: block;
+        margin: 8px auto;
+        transition: all 0.3s ease-in-out;
+    }
+    .b-hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: calc(100% - 84px);
+        background-color: inherit;
+        margin: 20px 0;
+        width: 30px;
+        height: 22px;
+        z-index: 2;
+    }
+    .b-hamburger:hover {
+        cursor: pointer;
+    }
+    .b-hamburger.is-active .line1 {
+        transform: translate(10px, 11px) rotate(90deg);
+    }
+    .b-hamburger.is-active .line2 {
+        transform: translate(0px, 0px) rotate(90deg);
+    }
+    .b-hamburger.is-active .line3 {
+        transform: translate(-10px, -11px) rotate(90deg);
+    }
+    .nav {
+        /* display: none; */
+        margin-top: -3.8%;
+        position: absolute;
+        z-index: 1;
+        width: 320px;
+        right: -320px;
+        /* transform: translate(100%, 100%); */
+        animation-name: hide;
+        animation-duration: 1.3s;
+        height: 107.1%;
+        background-color: var(--color-light-3xl);
+    }
+    .nav.open {
+        display: block;
+        animation-name: show;
+        animation-duration: 1.3s;
+        right: 0%; 
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--color-dark-s);
+        width: 243px;
+        height: 327px;
+        gap: 40px; 
+        margin: 0 auto;
+        padding-top: 129.5%;
+    }
+    .nav-link {
+        font-size: 32px;
+        line-height: 51.2px;
+    }
+    .nav-item {
+        text-align: center;
+    }
+    .start {
+        height: 823px;
+        margin-top: -60%;
+        background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%); 
+    }
+    .start-content {
+        margin-top: 14%;
+        align-self: flex-end;
+        height: 296px;
+    }
+    .start-title {
+        text-align: center;
+        letter-spacing: 0.06em;
+        width: 250px;
+        height: 64px;
+        font-size: 25px;
+        line-height: 32.5px;
+        margin: 0 auto;
+    }
+    .start-description {
+        text-align: center;
+        margin-left: 4%;
+        width: 300px;
+        height: 96px;
+    }
+    .start-puppy {
+        margin-left: -1%;
+    }
+    .puppy {
+        margin-left: 0;
+        width: 260px;
+        height: 272px;
+    }
+    .about {
+        height: 974px;
+        gap: 26px;
+        width: 320px;
+        /* justify-items: center; */
+    }
+    .about-block {
+        height: 494px;
+        align-items: center;
+    }
+    .about-title {
+        text-align: center;
+        font-size: 25px;
+        line-height: 32.5px;
+        width: 300px;
+        letter-spacing: 1.4px;
+        font-size: 25px;
+        line-height: 32.5px;
+    }
+    .description {
+        margin-top: -0.95%;
+        width: 270px;
+        text-align: justify;
+        /* gap: 30px; */
+        height: 405px;
+        gap: 22px;
+    }
+    .pets {
+        width: 260px;
+        height: 353.6px;
+    }
+    .our-friend {
+        width: 100%;
+        height: 791px;
+        gap: 0px;
+    }
+    .our-friends-title {
+        margin-top: 12.9%;
+        text-align: center;
+        font-size: 25px;
+        line-height: 32.5px;
+        letter-spacing: 1.5px;
+    }
+    .card:nth-child(n+2) {
+        display: none;
+    }
+    /* .arrow {
+        position: absolute;
+        top: 416%;
+    }
+    .arrow-left {
+        left: 21.5%;
+    }
+    .arrow-right {
+        right: 21.5%;
+    } */
+    .arrow {
+        margin: 0px;
+    }
+    .arrow-left {
+        position: relative;
+        top: 3.6%;
+        right: 24.5%;
+        order: 1;
+    }
+    .arrow-right {
+        position: relative;
+        bottom: 6%;
+        left: 24.5%;
+        order: 1;
+    }
+    .slider-with-arrow {
+        /* height: 507px; */
+        /* margin-top: 36px; */
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0px;
+        /* max-width: 320px; */
+    }
+    /* .our-friends-button { */
+        /* margin-top: 1.5%; */
+        /* bottom: 4.2%; */
+        /* top: 10.1%; */
+    /* } */
+    .how-help {
+        height: 745px;
+        gap: 42px;
+        margin-top: 0.6%;
+    }
+    .how-help-title { 
+        font-size: 25px;
+        line-height: 32.5px;
+        height: 64px;
+        letter-spacing: 1.5px;
+    }
+    .help-list-item-title {
+        font-size: 15px;
+        line-height: 16.5px;
+        letter-spacing: 0.8px;
+        word-wrap: nowrap;
+    }
+    .help-list {
+        column-gap: 30px;
+        row-gap: 30px;
+        width: 290px;
+    }
+    .help-list-item:last-child {
+        margin-right: 55%;
+    }
+    .help-list-item-icon {
+        width: 50px;
+        height: 50px;
+    }
+    .help-list-item {
+        width: 130px;
+        height: 87px;
+        gap: 21.5px;
+    }
+    .donation-section { 
+        margin-top: -2px;
+        height: 542.2px;
+    }
+    .donation {
+        margin-top: 13%;
+        height: 458.2px;
+        gap: 42px;
+    }
+    .donation-dog {
+        width: 260px;
+        height: 135.2px;
+    }
+    .donation-body {
+        width: 300px;
+        height: 281px;
+    }
+    .donation-title {
+        text-align: center;
+        font-size: 25px;
+        line-height: 32.5px;
+        letter-spacing: 1.5px;
+    }
+    .donation-subtitle {
+        width: 273px;
+        margin-left: 4%;
+        text-align: center;
+        line-height: 24px;
+        word-wrap: nowrap;
+        white-space: nowrap;
+        letter-spacing: 0px;
+    }
+    .donation-card {
+        margin-top: -0.45%;
+        margin-left: 3%;
+        width: 281px;
+        height: 43px;
+    }
+    .number-card {
+        font-size: 15px;
+        line-height: 16.5px;
+        letter-spacing: 1px;
+    }
+    .legal-information {
+        margin: 0 10px;
+        text-align: justify;
+    }
+    .footer-container {
+        margin-top: -0.57px;
+        height: 809px;
+    }
+    .footer {
+        width: 320px;  
+        gap: 40px;
+    }
+    .footer-questions {
+        align-items: center;
+        height: 208px;
+    }
+    .questions-title {
+        margin-top: -1%;
+        width: 278px;
+        height: 64px;
+        text-align: center;
+        font-size: 25px;
+        line-height: 32.5px;
+        letter-spacing: 1.5px;
+    }
+    .waiting-title {
+        margin-top: -7%;
+        width: 270px;
+        height: 64px;
+        text-align: center;
+        font-size: 25px;
+        line-height: 32.5px;
+        letter-spacing: 1.5px;
+    }
+    .footer-waiting {
+        align-items: center;
+        height: 222px;
+        width: 300px;
+        gap: 40px;
+    }
+    .footer-dog {
+        margin-top: -9%;
+        width: 260px;
+        height: 269px;
+    }
+    .first-marker {
+        width: 300px;
+        height: 46px;
+    }
+    .second-marker {
+        width: 300px;
+        height: 32px;
+    }
+    .first-marker-text {
+        word-wrap: nowrap;
+        /* white-space: nowrap; */
+    }
+}
+@media (max-width: 712px) {
+    .puppy {
+        margin-left: 70%;
+    }
+    .start {
+        margin-top: -22.5%;
+    } 
+}
+@media (max-width: 583px) {
+    .start {
+        margin-top: -22.5%;
+    } 
+    .puppy {
+        margin-left: 20%;
+    }
+    .slider-with-arrow {
+        margin-top: 36px;
+    }
+    .our-friend {
+        gap: 5px;
+    }
+    .our-friends-button {
+        margin-top: 1.5%;
+    }
 }

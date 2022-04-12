@@ -67,3 +67,36 @@ for (let i = 0; i < helpLength; i++) {
     helpListItem.append(titleItem);
 }
 // -----------------------------------------------
+
+
+const hamburger = document.querySelector('.b-hamburger');
+const nav = document.querySelector('.nav');
+const navList = document.querySelector('.nav-list');
+const navLinks = document.querySelectorAll('.nav-link');
+
+let width = document.querySelector('body').offsetWidth;
+
+function closeMenu(event) {
+    if (event.target.classList.contains('nav-link')) { 
+        hamburger.classList.remove('is-active');
+        nav.classList.remove('open');
+        if (nav.classList.contains('none')) {
+            nav.classList.remove('none');
+        } else {
+            setTimeout(()=>{nav.classList.add('none')}, 1000);
+        }
+    }
+}
+if (width < 767) {
+    nav.classList.add('none');
+}
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('is-active');
+    nav.classList.toggle('open');
+    if (nav.classList.contains('none')) {
+        nav.classList.remove('none');
+    } else {
+        setTimeout(()=>{nav.classList.add('none')}, 1000);
+    }
+  });
+  navLinks.forEach((el) => el.addEventListener('click', closeMenu));
