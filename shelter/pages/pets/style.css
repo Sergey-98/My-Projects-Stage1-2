@@ -58,9 +58,13 @@ h4 {
     height: 60px;
 }
 .logo {
+    text-decoration: none;
     align-items: center;
     width: 184px;
     height: 60px;
+}
+.logo:hover {
+    cursor: pointer;
 }
 .logo-title {
     margin: 0;
@@ -76,7 +80,7 @@ h4 {
     margin-top: 6%;
     margin-left:3%;
     letter-spacing: 1.2px;
-    color: var(--color-dark-3xl);
+    color: var(--color-light-3xl);
     font-family: Arial;
     font-weight: 400;
     font-size: 13px;
@@ -317,7 +321,7 @@ h4 {
     height: 310px;
 }
 
-@media (max-width: 1270px) {
+@media (max-width: 1279px) {
     .header-container {
         padding: 30px 0;
     }
@@ -328,6 +332,9 @@ h4 {
         height: 1733px;
     }
     .page2-our-friends {
+        margin-left: auto;
+        margin-right: auto;
+        width: 768px;
         height: 1603px;
     }
     .pets-card:nth-child(n+7) {
@@ -350,8 +357,7 @@ h4 {
         gap: 60px;
         /* padding: 0 30px; */
         padding-top: 15px;
-        width: 93,75%;
-        width: 100%;
+        width: 768px;
         height: 100%;
     }
     .footer-dog {
