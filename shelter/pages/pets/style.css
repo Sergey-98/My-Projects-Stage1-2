@@ -205,7 +205,7 @@ h4 {
     letter-spacing: 1.2px;
     color: var(--color-light-3xl);
 }
-.card-button:hover {
+.pets-card:hover .card-button {
     cursor: pointer;
     border: 2px solid var(--color-primary-light);
     background: var(--color-primary-light);

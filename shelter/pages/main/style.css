@@ -318,7 +318,7 @@ h4 {
     letter-spacing: 1px;
     color: var(--color-light-3xl);
 }
-.card-button:hover {
+.card:hover .card-button {
     cursor: pointer;
     border: 2px solid var(--color-primary-light);
     background: var(--color-primary-light);
