@@ -87,7 +87,7 @@ function closeMenu(event) {
         }
     }
 }
-if (width < 767) {
+if (width < 768) {
     nav.classList.add('none');
 }
   hamburger.addEventListener('click', () => {

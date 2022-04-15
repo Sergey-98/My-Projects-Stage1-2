@@ -38,6 +38,8 @@ const petsList = [
 // let petsLength = Object.keys(petsList).length;
 let pets = document.querySelector('.pets');
 
+let helpList = document.querySelector('.help-list');
+
 for (let i = 0; i < petsList.length; i++) {
     const petsCard = document.createElement('div');
     petsCard.classList.add('pets-card');
@@ -55,6 +57,44 @@ for (let i = 0; i < petsList.length; i++) {
     cardButton.classList.add('card-button');
     cardButton.textContent = 'Learn more';
     petsCard.append(cardButton);
-
-
 }
+
+
+// -----------------------------------------------
+
+
+const hamburger = document.querySelector('.b-hamburger');
+const nav = document.querySelector('.nav');
+const navList = document.querySelector('.nav-list');
+const navLinks = document.querySelectorAll('.nav-link');
+const logo = document.querySelector('.logo');
+
+
+let width = document.querySelector('body').offsetWidth;
+
+function closeMenu(event) {
+    if (event.target.classList.contains('nav-link')) { 
+        hamburger.classList.remove('is-active');
+        nav.classList.remove('open');
+        hamburger.classList.remove('open');
+        if (nav.classList.contains('none')) {
+            nav.classList.remove('none');
+        } else {
+            setTimeout(()=>{nav.classList.add('none')}, 1000);
+        }
+    }
+}
+if (width < 768) {
+    nav.classList.add('none');
+}
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('is-active');
+    nav.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    if (nav.classList.contains('none')) {
+        nav.classList.remove('none');
+    } else {
+        setTimeout(()=>{nav.classList.add('none')}, 1000);
+    }
+  });
+  navLinks.forEach((el) => el.addEventListener('click', closeMenu));
