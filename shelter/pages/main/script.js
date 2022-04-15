@@ -85,9 +85,9 @@ function closeMenu(event) {
         } else {
             setTimeout(()=>{nav.classList.add('none')}, 1000);
         }
-    }
+    } 
 }
-if (width < 767) {
+if (width < 768) {
     nav.classList.add('none');
 }
   hamburger.addEventListener('click', () => {
