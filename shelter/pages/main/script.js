@@ -85,7 +85,7 @@ function closeMenu(event) {
         } else {
             setTimeout(()=>{nav.classList.add('none')}, 1000);
         }
-    }
+    } 
 }
 if (width < 768) {
     nav.classList.add('none');

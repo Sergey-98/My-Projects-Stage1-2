@@ -1,5 +1,5 @@
 `use strict`;
-
+ 
 const petsList = [
     {
         img: '../../assets/images/pets-katrine.png',

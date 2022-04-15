@@ -742,7 +742,7 @@ h4 {
     .b-hamburger.is-active .line3 {
         transform: translate(-10px, -11px) rotate(90deg);
     }
-    .nav {
+    .nav { 
         /* display: none; */
         margin-top: -3.8%;
         position: absolute;
