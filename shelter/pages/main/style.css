@@ -432,7 +432,7 @@ h4 {
     font-size: 35px;
     line-height: 45.5px;
     letter-spacing: 2.1px;
-    color: var(color-dark-i);
+    color: var(--color-dark-i);
     /* margin-top: -3%; */
 }
 .donation-subtitle {
@@ -442,7 +442,7 @@ h4 {
     font-size: 15px;
     line-height: 16.5px;
     letter-spacing: 0.9px;
-    color: var(color-dark-l);
+    color: var(--color-dark-i);
 }
 .donation-card {
     display: flex;
