@@ -84,8 +84,18 @@ function closeMenu(event) {
         }
     }
 }
+window.addEventListener('resize',function(){
+    width = document.querySelector('body').offsetWidth;
+    if (width < 768) {
+        nav.classList.add('none');
+    } else if (width >= 768) {
+        nav.classList.remove('none');
+    }
+});
 if (width < 768) {
     nav.classList.add('none');
+} else if (width >= 768) {
+    nav.classList.remove('none');
 }
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('is-active');

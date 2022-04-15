@@ -39,7 +39,9 @@ h4 {
     margin: 0 auto;
 }
 /* ----- */
-
+.none {
+    display: none;
+}
 /* -----header----- */
 .header-container {
     padding-top: 4.7%;
