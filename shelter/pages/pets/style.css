@@ -27,6 +27,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+.overflow {
+    overflow-y: hidden;
+}
+.scroll {
+    overflow-y: auto;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -52,6 +58,7 @@ h4 {
     top: 0;
     background-color: var(--color-white);
     padding: 30px 40px;
+    z-index: 100;
 }
 .header {
     display: flex;
@@ -147,6 +154,14 @@ h4 {
 } */
 /* ---------------main--------------- */
 /* -----our-friends----- */
+@keyframes fade {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .friends {
     display: flex;
     align-items: center;
@@ -201,6 +216,8 @@ h4 {
     align-items: center;
     justify-content: space-between;
     background-color: var(--color-light-s);
+    animation-name: fade;
+    animation-duration: 1s;
 }
 .pets-card:hover {
     cursor: pointer;
@@ -257,7 +274,12 @@ h4 {
     border: 2px solid var(--color-primary);
     color: var(--color-dark-3xl);
 }
-.button-right:hover {
+.active:hover {
+    cursor: pointer;
+    border: 2px solid var(--color-primary-light);
+    background: var(--color-primary-light);
+}
+/* .button-right:hover {
     cursor: pointer;
     border: 2px solid var(--color-primary-light);
     background: var(--color-primary-light);
@@ -266,7 +288,7 @@ h4 {
     cursor: pointer;
     border: 2px solid var(--color-primary-light);
     background: var(--color-primary-light);
-}
+} */
 /* .button-number:hover {
     cursor: pointer;
     border: 2px solid var(--color-primary-light);
@@ -354,7 +376,8 @@ h4 {
     margin: 0 auto;
     width: 952px;
     height: 552px;
-    
+    animation-name: fade;
+    animation-duration: 1s;
 }
 .modal-close {
     color: var(--color-light-3xl);
@@ -621,7 +644,7 @@ h4 {
         margin: 20px 0;
         width: 30px;
         height: 22px;
-        z-index: 2;
+        z-index: 200;
     }
     .b-hamburger:hover {
         cursor: pointer;
@@ -635,29 +658,49 @@ h4 {
     .b-hamburger.is-active .line3 {
         transform: translate(-10px, -11px) rotate(90deg);
     }
+    .nav-wrapper.open {
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation-name: show;
+        animation-duration: 1.3s;
+        width: 100%;
+        height: 823px;
+        background-color: rgba(41,41,41,0.6);
+        z-index: 50;
+    }
+    .nav-wrapper:hover {
+        cursor: pointer;
+    }
     .nav {
         /* display: none; */
         margin-top: -30px;
         position: absolute;
-        z-index: 1;
+        z-index: 100;
         width: 320px;
         right: -320px;
         /* transform: translate(100%, 100%); */
         animation-name: hide;
         animation-duration: 1.3s;
         height: 823px;
-        background-color: var(--color-light-3xl);
+        padding-bottom: 550px;
+        background-color: var(--color-white);
+        overflow-y: auto;
+        /* background-color: var(--color-light-3xl); */
+    }
+    .nav:hover {
+        cursor: default;
     }
     .logo-nav .logo-title{
-        color: var(--color-primary);
+        /* color: var(--color-primary); */
         transition: 1.3s;
     }
     .logo-nav .logo-subtitle {
-        color: var(--color-white);
+        /* color: var(--color-white); */
         transition: 1.3s;
     }
     .b-hamburger.open .h-line { 
-        background-color: var(--color-primary);
+        /* background-color: var(--color-primary); */
         transition: 0.5s;
     }
     .nav.open {
@@ -667,22 +710,22 @@ h4 {
         right: 0%; 
     }
     .nav.open .nav-link {
-        color: var(--color-dark-s);
+        /* color: var(--color-dark-s); */
         transition: 0.5s;
     }
     .nav.open .nav-link:hover {
         cursor: pointer;
-        color: var(--color-light-s);
+        /* color: var(--color-light-s); */
     }
     .nav.open .nav-item > .active-link{ 
-        color: var(--color-light-s);
+        /* color: var(--color-light-s); */
         transition: 0.5s;
     }
     .nav-list {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        color: var(--color-dark-s);
+        /* color: var(--color-dark-s); */
         width: 243px;
         height: 327px;
         gap: 40px; 
@@ -792,6 +835,7 @@ h4 {
     .modal-content {
         width: 240px;
         height: 341px;
+        padding-bottom: 50px;
     }
     .content-description {
         margin-top: 11px;

@@ -1,6 +1,7 @@
 `use strict`;
 
 import petsInfo from '../../js/pets.js';
+
 //--------------- for how help block--------------
 const help = [
     {
@@ -42,9 +43,18 @@ const help = [
 ];
 const hamburger = document.querySelector('.b-hamburger');
 const nav = document.querySelector('.nav');
+const navWrapper = document.querySelector('.nav-wrapper');
 const navLinks = document.querySelectorAll('.nav-link');
+const navList = document.querySelectorAll('.nav-list');
 let width = document.querySelector('body').offsetWidth;
 let helpList = document.querySelector('.help-list');
+let body = document.querySelector('body');
+
+let activeBurgerMemu = false;
+//-----отключение ссылок на пункты header-------
+
+
+// ---------------------------------------------
 
 for (let i = 0; i < help.length; i++) {
     createHelpList(i);
@@ -64,52 +74,85 @@ function createHelpList(i) {
     titleItem.textContent = help[i].title;
     helpListItem.append(titleItem);
 }
-function closeMenu(event) {
-    if (event.target.classList.contains('nav-link')) { 
+function closeMenu() {
         hamburger.classList.remove('is-active');
+        document.documentElement.classList.remove('overflow');
         nav.classList.remove('open');
-        if (nav.classList.contains('none')) {
+        navWrapper.classList.remove('open');
+        activeBurgerMemu = false;
+        if (nav.classList.contains('none') && navWrapper.classList.contains('none')) {
             nav.classList.remove('none');
+            navWrapper.classList.remove('none');
+            activeBurgerMemu = true;
         } else {
-            setTimeout(()=>{nav.classList.add('none')}, 1000);
+            setTimeout(()=>{
+                nav.classList.add('none');
+                navWrapper.classList.add('none');
+            }, 1000);
+            activeBurgerMemu = false;
         }
-    } 
 }
 window.addEventListener('resize',function(){
     width = document.querySelector('body').offsetWidth;
-    if (width < 768) {
+    if (width < 768 && !nav.classList.contains('open')) {
         nav.classList.add('none');
+        navWrapper.classList.add('none');
     } else if (width >= 768) {
         nav.classList.remove('none');
+        navWrapper.classList.remove('none');
     }
 });
 if (width < 768) {
     nav.classList.add('none');
+    navWrapper.classList.add('none');
 } else if (width >= 768) {
     nav.classList.remove('none');
+    navWrapper.classList.remove('none');
 }
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('is-active');
+    document.documentElement.classList.toggle('overflow');
     nav.classList.toggle('open');
-    if (nav.classList.contains('none')) {
+    navWrapper.classList.toggle('open');
+    if (nav.classList.contains('none') && navWrapper.classList.contains('none')) {
         nav.classList.remove('none');
+        navWrapper.classList.remove('none');
+        activeBurgerMemu = true;
     } else {
-        setTimeout(()=>{nav.classList.add('none')}, 1000);
+        setTimeout(()=>{
+            nav.classList.add('none');
+            navWrapper.classList.add('none');
+        }, 1000);
+        activeBurgerMemu = false;
     }
   });
-  navLinks.forEach((el) => el.addEventListener('click', closeMenu));
-
+  navLinks.forEach((el) => el.addEventListener('click', (event) => {
+    if (event.target.classList.contains('nav-link')) {
+        console.log(event.target);
+        closeMenu();
+    }
+    }));
+    navWrapper.addEventListener('click', (event) => {
+        let target = event.target;
+        if (target.classList.contains('nav-wrapper')) {
+            closeMenu(); 
+        }
+    });
 // --------Card-------
 class Card {
-    constructor(src, alt, name, data) {
+    constructor(src, alt, name, data, classAdd, classRemove) {
         this.src = src;
         this.alt = alt;
         this.name = name;
         this.data = data;
+        this.classAdd = classAdd;
+        this.classRemove = classRemove;
         this.parent = document.querySelector('.slider');
     }
     renderCard() {
         const card = document.createElement('div');
+        card.classList.remove(this.classRemove);
+        card.classList.add(this.classAdd);
         card.classList.add('card');
         card.setAttribute('data-pets', this.data);
         card.innerHTML = `
@@ -133,7 +176,7 @@ for (let i = 0; i < petsInfo.length-5; i++) {
             petsInfo[i].name,
         ).renderCard();
 }
-const data = document.querySelectorAll('[data-pets]');
+let data = document.querySelectorAll('[data-pets]');
 //   ------Modal------
 class Modal {
     constructor(name, src, alt, type, breed, description, age, inoculations, diseases, parasites) {
@@ -188,9 +231,11 @@ let modalWrapper = document.querySelector('.modal-wrapper');
 let modalContent = document.querySelector('.modal-content');
 let modalClose = document.querySelector('.modal-close');
 let modal = document.querySelector('.modal');
-
+// let body = document.querySelector('body');
 
 function closeModal() {
+    document.documentElement.classList.remove('overflow');
+    modalContent.classList.remove('scroll');
     modalWrapper.classList.add('none');
     modalContent.innerHTML = ``;
 }
@@ -200,11 +245,12 @@ modalWrapper.addEventListener('click', (event)=> {
         closeModal();
     }
 });
-
 function showModal(event) {
-    // modalWrapper.classList.remove('none');
     modalWrapper.classList.remove('none');
+    document.documentElement.classList.add('overflow');
+    modalContent.classList.add('scroll');
     const tar = event.target;
+    // console.log(tar);
     for (let i = 0; i < petsInfo.length; i++) {
         if (petsInfo[i].name === tar.dataset.pets) {
             new Modal(
@@ -223,3 +269,88 @@ function showModal(event) {
     }
 }
 data.forEach((el) => el.addEventListener('click', (event) => showModal(event)));
+
+// ---------Slider---------
+
+let petsArr = [];
+let card = document.querySelector('.card');
+
+for (let i = 0; i < petsInfo.length; i++) {
+    petsArr.push(i);
+}
+let arr = petsArr;
+petsArr = petsArr.concat(petsArr);
+petsArr = petsArr.concat(arr);
+function sliceBlock(arr, size) {
+    const res = [];
+    for (let i = 0; i < arr.length; i += size) {
+        const chunk = arr.slice(i, i + size);
+        res.push(chunk);
+    }
+    return res;
+}
+petsArr = sliceBlock(petsArr, 3);
+// console.log(petsArr);
+
+let next = document.querySelector('.arrow-right');
+let prev = document.querySelector('.arrow-left');
+let slider = document.querySelector('.slider');
+let countSlider = 0;
+
+function createCards(elem,classAdd, classRemove) {
+    for (let i = 0; i < elem[0].length; i++) {
+        let num = elem[0][i];
+        new Card(
+            petsInfo[num].img,
+            petsInfo[num].alt,
+            petsInfo[num].name,
+            petsInfo[num].name,
+            classAdd,
+            classRemove,
+        ).renderCard();
+    }
+
+    data = document.querySelectorAll('[data-pets]');
+    data.forEach((el) => el.addEventListener('click', (event) => showModal(event)));
+}
+function showNext() {
+    if (countSlider >= petsArr.length-1) {
+        countSlider = 0;
+    } else {
+        countSlider += 1;
+    }
+    // let timer = setTimeout(function() {
+    //     if (countSlider >= petsArr.length-1) {
+    //         countSlider = 0;
+    //     } else {
+    //         countSlider += 1;
+    //     }
+    //     createCards([petsArr[countSlider]]);
+    //   }, 1000);
+    slider.innerHTML = '';
+    // card.classList.remove('anim-left');
+    // card.classList.add('anim-right');
+    createCards([petsArr[countSlider]], 'anim-right', 'anim-left');
+}
+function showPrev() {
+    if (countSlider == 0) {
+        countSlider = petsArr.length-1;
+    } else {
+        countSlider -= 1;
+    }
+    slider.innerHTML = '';
+    // card.classList.remove('anim-right');
+    // card.classList.add('anim-left');
+    createCards([petsArr[countSlider]], 'anim-left', 'anim-right');
+}
+
+next.addEventListener('click', (event) => {
+    if (event.target.classList.contains('arrow-right')) {
+        showNext();
+    }
+});
+prev.addEventListener('click', (event) => {
+    if (event.target.classList.contains('arrow-left')) { 
+        showPrev();
+    }
+});
