@@ -21,6 +21,14 @@
     font-family: Georgia;
     src: url("../../assets/fonts/Georgia.ttf");
 }
+@keyframes fade {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
 /* ----- */
 * {
     margin: 0;
@@ -37,6 +45,12 @@ body {
 h4 {
     font-weight: 400;
 }
+.overflow {
+    overflow-y: hidden;
+}
+.scroll {
+    overflow-y: auto;
+}
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -48,8 +62,6 @@ h4 {
 /* -----header----- */
 .header-container {
     padding-top: 4.7%;
-    /* margin-bottom: 5px; */
-    /* background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) */
 }
 .header {
     display: flex;
@@ -276,11 +288,28 @@ h4 {
     border-radius: 50%;
     color: var(--color-light-3xl);
     border: 2px solid var(--color-primary);
+    z-index: 100;
 }
 .arrow:hover {
     cursor: pointer;
     border: 2px solid var(--color-primary-light);
     background: var(--color-primary-light);
+}
+@keyframes animLeft {
+    from {
+        transform: translate(-100%, 0);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+@keyframes animRight {
+    from {
+        transform: translate(100%, 0);
+    }
+    to {
+        transform: translate(0, 0);
+    }
 }
 .slider {
     display: flex;
@@ -288,6 +317,11 @@ h4 {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
+    /* animation-name: anim;
+    animation-duration: .5s; */
+    overflow-x: hidden;
+    /* transform: translate(-100%, 0); */
+    /* padding-left: 50%; */
 }
 .card-title {
     font-family: Georgia;
@@ -300,6 +334,14 @@ h4 {
 .card-img {
     width: 270px;
     height: 270px;
+}
+.card.anim-left {
+    animation-name: animLeft;
+    animation-duration: .2s;
+}
+.card.anim-right {
+    animation-name: animRight;
+    animation-duration: .2s;
 }
 .card {
     width: 270px;
@@ -564,7 +606,9 @@ h4 {
     left: 2%;
     margin: 0 auto;
     width: 952px;
-    height: 552px;  
+    height: 552px;
+    animation-name: fade;
+    animation-duration: 1s;  
 }
 .modal-close {
     color: var(--color-light-3xl);
@@ -900,7 +944,7 @@ h4 {
         margin: 20px 0;
         width: 30px;
         height: 22px;
-        z-index: 2;
+        z-index: 200;
     }
     .b-hamburger:hover {
         cursor: pointer;
@@ -914,18 +958,37 @@ h4 {
     .b-hamburger.is-active .line3 {
         transform: translate(-10px, -11px) rotate(90deg);
     }
+    .nav-wrapper.open {
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation-name: show;
+        animation-duration: 1.3s;
+        width: 100%;
+        height: 823px;
+        background-color: rgba(41,41,41,0.6);
+        z-index: 50;
+    }
+    .nav-wrapper:hover {
+        cursor: pointer;
+    }
     .nav { 
         /* display: none; */
         margin-top: -3.8%;
         position: absolute;
-        z-index: 1;
+        z-index: 100;
         width: 320px;
         right: -320px;
-        /* transform: translate(100%, 100%); */
         animation-name: hide;
         animation-duration: 1.3s;
         height: 823px;
+        padding-bottom: 400px;
+        /* height: 823px; */
         background-color: var(--color-light-3xl);
+        overflow-y: auto;
+    }
+    .nav:hover {
+        cursor: default;
     }
     .nav.open {
         display: block;
@@ -942,7 +1005,9 @@ h4 {
         height: 327px;
         gap: 40px; 
         margin: 0 auto;
-        padding-top: 129.5%;
+        margin-top: 79.5%;
+        /* padding-top: 129.5%; */
+        /* overflow-y: auto; */
     }
     .nav-link {
         font-size: 32px;
@@ -1208,7 +1273,9 @@ h4 {
     }
     .modal-content {
         width: 240px;
+        /* height: 100%; */
         height: 341px;
+        padding-bottom: 50px;
     }
     .content-description {
         margin-top: 11px;
