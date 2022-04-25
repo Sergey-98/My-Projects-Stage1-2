@@ -281,6 +281,9 @@ for (let i = 0; i < petsInfo.length; i++) {
 let arr = petsArr;
 petsArr = petsArr.concat(petsArr);
 petsArr = petsArr.concat(arr);
+function shuffleArr(array) {
+    array.sort(() => Math.random() - 0.5);
+}
 function sliceBlock(arr, size) {
     const res = [];
     for (let i = 0; i < arr.length; i += size) {
@@ -297,7 +300,7 @@ let prev = document.querySelector('.arrow-left');
 let slider = document.querySelector('.slider');
 let countSlider = 0;
 
-function createCards(elem,classAdd, classRemove) {
+function createCards(elem, classAdd, classRemove) {
     for (let i = 0; i < elem[0].length; i++) {
         let num = elem[0][i];
         new Card(
@@ -314,6 +317,9 @@ function createCards(elem,classAdd, classRemove) {
     data.forEach((el) => el.addEventListener('click', (event) => showModal(event)));
 }
 function showNext() {
+    for (let i = 0; i < petsArr.length; i++) {
+        shuffleArr(petsArr[i]);
+    }
     if (countSlider >= petsArr.length-1) {
         countSlider = 0;
     } else {
@@ -330,9 +336,13 @@ function showNext() {
     slider.innerHTML = '';
     // card.classList.remove('anim-left');
     // card.classList.add('anim-right');
+    
     createCards([petsArr[countSlider]], 'anim-right', 'anim-left');
 }
 function showPrev() {
+    for (let i = 0; i < petsArr.length; i++) {
+        shuffleArr(petsArr[i]);
+    }
     if (countSlider == 0) {
         countSlider = petsArr.length-1;
     } else {
@@ -341,6 +351,7 @@ function showPrev() {
     slider.innerHTML = '';
     // card.classList.remove('anim-right');
     // card.classList.add('anim-left');
+    
     createCards([petsArr[countSlider]], 'anim-left', 'anim-right');
 }
 
