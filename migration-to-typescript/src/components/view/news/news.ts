@@ -1,5 +1,5 @@
 import './news.css';
-import { ISources } from '../../../types/interfaces'
+import { ISources } from '../../../types/interfaces';
 
 class News {
     draw(data : ISources[]) {

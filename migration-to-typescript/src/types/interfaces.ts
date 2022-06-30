@@ -15,5 +15,20 @@ export interface ISources {
 export interface IData {
   status: string;
   totalResults: number;
-  articles: ReadonlyArray<ISources>;
+  articles: Array<ISources>;
+}
+
+export interface IDataNews {
+  category: string;
+  country: string;
+  description: string;
+  id: string;
+  language: string;
+  name: string;
+  url: string;
+}
+
+export interface IDataSources {
+  status: string;
+  sources: Array<IDataNews>;
 }

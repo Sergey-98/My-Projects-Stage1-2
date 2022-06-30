@@ -1,16 +1,16 @@
 import './sources.css';
-import {ISources } from '../../../types/interfaces'
+import { IDataNews } from '../../../types/interfaces';
 
 class Sources {
-    draw(data : ISources[]) {
+    draw(data : IDataNews[]) {
         const fragment = document.createDocumentFragment();
         const sourceItemTemp = <HTMLTemplateElement> document.querySelector('#sourceItemTemp');
         
-        data.forEach((item : ISources) => {
+        data.forEach((item : IDataNews) => {
             const sourceClone = sourceItemTemp.content.cloneNode(true);
 
-            ((sourceClone as ParentNode).querySelector('.source__item-name')as HTMLElement).textContent = item.source.name;
-            ((sourceClone as ParentNode).querySelector('.source__item')as HTMLElement).setAttribute('data-source-id', item.source.id);
+            ((sourceClone as ParentNode).querySelector('.source__item-name') as HTMLElement).textContent = item.name;
+            ((sourceClone as ParentNode).querySelector('.source__item') as HTMLElement).setAttribute('data-source-id', item.id);
 
             fragment.append(sourceClone);
         });
