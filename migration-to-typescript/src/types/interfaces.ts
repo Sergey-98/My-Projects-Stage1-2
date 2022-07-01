@@ -48,3 +48,7 @@ export interface IResponsive {
   type: string;
   url: string;
 }
+
+export interface ICallBack <T extends IData | IDataSources> {
+  (data ?: T) : T | void;
+}

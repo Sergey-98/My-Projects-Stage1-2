@@ -1,7 +1,8 @@
 import AppLoader from './appLoader';
+import { IData, IDataSources, ICallBack } from '../../types/interfaces';
 
 class AppController extends AppLoader {
-    getSources(callback : () => void) {
+    getSources(callback ?: ICallBack<IDataSources>) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -10,7 +11,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e : PointerEvent, callback : () => void) {
+    getNews(e : MouseEvent, callback ?: ICallBack<IData>) {
         let target = e.target;
         const newsContainer = e.currentTarget;
 
