@@ -32,3 +32,19 @@ export interface IDataSources {
   status: string;
   sources: Array<IDataNews>;
 }
+
+export interface IOptions {
+  apiKey: string;
+}
+
+export interface IResponsive {
+  body: ReadableStream<Uint8Array> | null;
+  bodyUsed: boolean;
+  headers: Headers;
+  ok: boolean;
+  redirected: boolean;
+  status: number;
+  statusText: string;
+  type: string;
+  url: string;
+}
