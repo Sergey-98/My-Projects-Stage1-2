@@ -5,11 +5,11 @@ export interface ISources {
   };
   author: string;
   title: string;
-  description: string,
-  url: string,
+  description: string;
+  url: string;
   urlToImage: string;
-  publishedAt: string,
-  content: string,
+  publishedAt: string;
+  content: string;
 }
 
 export interface IData {
@@ -49,6 +49,6 @@ export interface IResponsive {
   url: string;
 }
 
-export interface ICallBack <T extends IData | IDataSources> {
-  (data ?: T) : T | void;
+export interface ICallBack<T extends IData | IDataSources> {
+  (data?: T): T | void;
 }

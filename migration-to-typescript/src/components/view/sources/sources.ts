@@ -2,21 +2,23 @@ import './sources.css';
 import { IDataNews } from '../../../types/interfaces';
 
 class Sources {
-    draw(data : IDataNews[]) {
-        const fragment = document.createDocumentFragment();
-        const sourceItemTemp = <HTMLTemplateElement> document.querySelector('#sourceItemTemp');
-        
-        data.forEach((item : IDataNews) => {
-            const sourceClone = sourceItemTemp.content.cloneNode(true);
+  draw(data: IDataNews[]) {
+    const fragment = document.createDocumentFragment();
+    const sourceItemTemp = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
+    data.forEach((item: IDataNews) => {
+      const sourceClone = sourceItemTemp.content.cloneNode(true);
 
-            ((sourceClone as ParentNode).querySelector('.source__item-name') as HTMLElement).textContent = item.name;
-            ((sourceClone as ParentNode).querySelector('.source__item') as HTMLElement).setAttribute('data-source-id', item.id);
+      ((sourceClone as ParentNode).querySelector('.source__item-name') as HTMLElement).textContent = item.name;
+      ((sourceClone as ParentNode).querySelector('.source__item') as HTMLElement).setAttribute(
+        'data-source-id',
+        item.id
+      );
 
-            fragment.append(sourceClone);
-        });
+      fragment.append(sourceClone);
+    });
 
-        (document.querySelector('.sources') as HTMLDivElement).append(fragment);
-    }
+    (document.querySelector('.sources') as HTMLDivElement).append(fragment);
+  }
 }
 
 export default Sources;
