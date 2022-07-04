@@ -1,4 +1,4 @@
-export interface ISources {
+export type ISources = {
   source: {
     name: string;
     id: string;
@@ -10,7 +10,7 @@ export interface ISources {
   urlToImage: string;
   publishedAt: string;
   content: string;
-}
+};
 
 export interface IData {
   status: string;
@@ -18,7 +18,7 @@ export interface IData {
   articles: Array<ISources>;
 }
 
-export interface IDataNews {
+export type IDataNews = {
   category: string;
   country: string;
   description: string;
@@ -26,7 +26,7 @@ export interface IDataNews {
   language: string;
   name: string;
   url: string;
-}
+};
 
 export interface IDataSources {
   status: string;

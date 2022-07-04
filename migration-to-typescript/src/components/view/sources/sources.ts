@@ -13,7 +13,6 @@ class Sources {
         'data-source-id',
         item.id
       );
-
       fragment.append(sourceClone);
     });
 

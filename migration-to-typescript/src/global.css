@@ -17,19 +17,45 @@ footer {
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+}
+footer a {
+    color: #70D6FF;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #69db7e;
+}
+footer .rsschool {
+    width: 100px;
+    height: 50px;
+    background-image: url("./assets/svg/logo.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    filter: invert(100%);
+}
+footer .rsschool:hover {
+    filter: invert(70%);
 }
 footer .copyright {
     font-size: 14px;
-    color: #333;
+    color: #70D6FF;
     text-align: center;
 }
 footer .copyright a {
-    color: #444;
+    color: #42c7fc;
 }
 footer .copyright a:hover {
-    color: #555;
+    color: #0090c9;
 }
 footer .copyright:before {
     content: '©';
+}
+
+@media screen and (max-width: 580px) {
+    header h1 {
+        font-size: 30px;
+        font-weight: 800;
+    }
+
 }
