@@ -14,7 +14,7 @@ class News {
       if (idx % 2) ((newsClone as ParentNode).querySelector('.news__item') as HTMLElement).classList.add('alt');
 
       ((newsClone as ParentNode).querySelector('.news__meta-photo') as HTMLElement).style.backgroundImage = `url(${
-        item.urlToImage || 'img/news_placeholder.jpg'
+        item.urlToImage || 'assets/img/logo.svg'
       })`;
       ((newsClone as ParentNode).querySelector('.news__meta-author') as HTMLElement).textContent =
         item.author || item.source.name;

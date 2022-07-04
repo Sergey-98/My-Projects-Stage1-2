@@ -3,7 +3,9 @@ body {
     background: #17181c;
     font-family: sans-serif;
 }
-
+main {
+    display: flex;
+}
 header {
     padding: 10px 30px;
 }
@@ -12,8 +14,27 @@ header h1 {
     font-size: 40px;
     font-weight: 800;
 }
-
+.selected_buttons {
+    width: 30%;
+}
+select {
+    width: 100%;
+    text-align: center;
+    background-color: inherit;
+    border: none;
+    color: #70D6FF;
+    font-size: 1em;
+    margin-bottom: 5%;
+}
+select:hover {
+    color: #69db7e;
+}
+select:focus {
+    color: #00090c;
+    background-color: #70D6FF; 
+}
 footer {
+    margin-top: 5%;
     height: 100px;
     display: flex;
     align-items: center;
@@ -29,7 +50,7 @@ footer a:hover {
 footer .rsschool {
     width: 100px;
     height: 50px;
-    background-image: url("./assets/svg/logo.svg");
+    background-image: url("./assets/img/logo.svg");
     background-repeat: no-repeat;
     background-size: 100%;
     filter: invert(100%);
@@ -54,8 +75,26 @@ footer .copyright:before {
 
 @media screen and (max-width: 580px) {
     header h1 {
+        text-align: center;
         font-size: 30px;
         font-weight: 800;
     }
+}
 
+@media screen and (max-width: 410px) {
+    footer {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .selected_buttons {
+        width: 100%;
+    }
+    main {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
 }

@@ -26,13 +26,13 @@ const baseConfig = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      images: path.resolve(__dirname, './assets/svg/logo.svg'),
+      images: path.resolve(__dirname, './assets/img/'),
     },
   },
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, '../dist'),
-    assetModuleFilename: 'assets/svg/[name][ext]',
+    assetModuleFilename: 'assets/img/[name][ext]',
   },
   plugins: [
     new HtmlWebpackPlugin({
