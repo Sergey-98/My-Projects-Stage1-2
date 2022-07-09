@@ -1,5 +1,7 @@
 .news {
     width: 70%;
+    height: 69vh;
+    overflow-y: auto;
 }
 .news__item {
     display: flex;
@@ -12,6 +14,18 @@
     font-family: Arial, sans-serif;
     border-radius: 5px;
     overflow: hidden;
+}
+
+.news::-webkit-scrollbar {
+    width: 12px;
+}
+.news::-webkit-scrollbar-track {
+    background: #69db7e;
+}
+.news::-webkit-scrollbar-thumb {
+    background-color: #026891;
+    border-radius: 5px;
+    border: 3px solid #69db7e;
 }
 
 .news__item:hover .news__meta-photo {

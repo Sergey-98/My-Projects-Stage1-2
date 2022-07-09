@@ -1,18 +1,16 @@
-import { IOptions, IDataSources } from '../../types/interfaces';
-
 class Loader {
   baseLink: string;
-  options: IOptions;
-  constructor(baseLink: string, options: IOptions) {
+  options: object;
+  constructor(baseLink: string, options = {}) {
     this.baseLink = baseLink;
     this.options = options;
   }
 
   getResp(
-    { endpoint, options = {} }: { endpoint: string; options?: IOptions | Partial<object> },
-    callback = () => {
+    { endpoint, options = {} }: { endpoint: string; options?: object },
+    callback = (): void => {
       console.error('No callback for GET response');
-    }
+    } // In the controller.ts file, the callback is redefined, where the data that we receive is specified
   ) {
     this.load('GET', endpoint, callback, options);
   }
@@ -26,7 +24,7 @@ class Loader {
     return res;
   }
 
-  makeUrl(options: { apiKey?: string }, endpoint: string) {
+  makeUrl(options = {}, endpoint: string) {
     const urlOptions = { ...this.options, ...options };
     let url = `${this.baseLink}${endpoint}?`;
     Object.keys(urlOptions).forEach((key) => {
@@ -35,11 +33,11 @@ class Loader {
     return url.slice(0, -1);
   }
 
-  load(method: string, endpoint: string, callback: (data: IDataSources) => void, options: IOptions) {
+  load(method: string, endpoint: string, callback: <T>(data: T) => void, options = {}) {
     fetch(this.makeUrl(options, endpoint), { method })
       .then((...args) => this.errorHandler(...args))
       .then((res) => res.json())
-      .then((data: IDataSources) => callback(data))
+      .then((data) => callback(data))
       .catch((err) => console.error(err));
   }
 }

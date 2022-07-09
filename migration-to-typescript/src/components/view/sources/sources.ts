@@ -1,12 +1,12 @@
 import './sources.css';
-import { IDataNews } from '../../../types/interfaces';
+import { DataNews } from '../../../types/types';
 
 class Sources {
-  draw(data: IDataNews[]) {
+  draw(data: DataNews[]) {
     const fragment = document.createDocumentFragment();
     const select = <HTMLSelectElement>document.querySelector('.select');
     const sourceItemTemp = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
-    data.forEach((item: IDataNews) => {
+    data.forEach((item: DataNews) => {
       const sourceClone = sourceItemTemp.content.cloneNode(true);
       if (item.category === select.value) {
         ((sourceClone as ParentNode).querySelector('.source__item-name') as HTMLElement).textContent = item.name;

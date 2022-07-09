@@ -10,13 +10,16 @@ class App {
   }
 
   start() {
-    (document.querySelector('.sources') as HTMLDivElement).addEventListener('click', (e) =>
-      this.controller.getNews(e, (data) => {
-        if (data) {
-          this.view.drawNews(data);
-        }
-      })
-    );
+    const sources = document.querySelector<HTMLDivElement>('.sources');
+    if (sources) {
+      sources.addEventListener('click', (e) =>
+        this.controller.getNews(e, (data) => {
+          if (data) {
+            this.view.drawNews(data);
+          }
+        })
+      );
+    }
     this.controller.getSources((data) => {
       if (data) {
         this.view.drawSources(data);
