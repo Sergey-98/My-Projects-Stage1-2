@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    display: flex;
+    border: 1px solid red;
+}
+.manufacturer {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.gender {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.body-material {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.belt-color {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.quantity-in-stock {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.release {
+    display: flex;
+}
+.release-year {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.quantity {
+    display: flex;
+}
+.popular {
+    display: flex;
+    border: 1px solid red;
+}
+.reset-buttons {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid red;
+}
+.toolbar {
+    width: 25%;
+    border: 1px solid red;
+}
+.main-page {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    border: 1px solid red;
+}
+.sorting {
+    border: 1px solid red;
+}
+.cards {
+    border: 1px solid red;
+}
+header {
+    display: flex;
+    border: 1px solid red;
+}
+footer {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+footer .rsschool {
+    width: 100px;
+    height: 50px;
+    background-image: url("./assets/img/logo.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+footer .rsschool:hover {
+    filter: invert(50%);
+}
+footer .copyright {
+    font-size: 14px;
+    color: #70D6FF;
+    text-align: center;
+}
+footer .copyright:before {
+    content: '©';
+}
+
+@media screen and (max-width: 410px) {
+    footer {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "brand": "Casio",
+    "name": "Casio MTP-1374D-1A",
+    "img": "./assets/img/Casio_MTP-1374D-1A.jpg",
+    "gender": "man",
+    "stock": 5,
+    "material": "steel",
+    "color": "white",
+    "releaseYear": "2019",
+    "isPopular": "yes"
+  },
+  {
+    "brand": "Emporio-Armani",
+    "name": "EMPORIO ARMANI AR5890",
+    "img": "./assets/img/EMPORIO_ARMANI_AR5890.jpg",
+    "gender": "man",
+    "stock": 3,
+    "material": "steel",
+    "color": "black",
+    "releaseYear": "2020",
+    "isPopular": "no"
+  },
+  {
+    "brand": "Diesel",
+    "name": "DIESEL DZ7314",
+    "img": "./assets/img/DIESEL_DZ7314.jpg",
+    "gender": "man",
+    "stock": 4,
+    "material": "steel",
+    "color": "brown",
+    "releaseYear": "2019",
+    "isPopular": "yes"
+  },
+  {
+    "brand": "Casio",
+    "name": "CASIO Edifice EF-552-1AVEF",
+    "img": "./assets/img/CASIO_Edifice_EF-552-1AVEF.jpg",
+    "gender": "man",
+    "stock": 5,
+    "material": "steel",
+    "color": "black",
+    "releaseYear": "2020",
+    "isPopular": "yes"
+  },
+  {
+    "brand": "Stuhrling",
+    "name": "Stuhrling 3917.2",
+    "img": "./assets/img/Stuhrling_3917.2.jpg",
+    "gender": "man",
+    "stock": 1,
+    "material": "plastic",
+    "color": "black",
+    "releaseYear": "2022",
+    "isPopular": "no"
+  },
+  {
+    "brand": "Casio",
+    "name": "Casio Sheen SHE-4543GL-8AUER",
+    "img": "./assets/img/Casio_Sheen_SHE-4543GL-8AUER.jpg",
+    "gender": "woman",
+    "stock": 3,
+    "material": "steel",
+    "color": "black",
+    "releaseYear": "2018",
+    "isPopular": "yes"
+  },
+  {
+    "brand": "Casio",
+    "name": "Casio Collection LTP-1234PGL-7A",
+    "img": "./assets/img/Casio_Collection_LTP-1234PGL-7A.jpg",
+    "gender": "woman",
+    "stock": 7,
+    "material": "plastic",
+    "color": "red",
+    "releaseYear": "2015",
+    "isPopular": "no"
+  },
+  {
+    "brand": "Emporio-Armani",
+    "name": "Emporio Armani AR11128",
+    "img": "./assets/img/Emporio_Armani_AR11128.jpg",
+    "gender": "woman",
+    "stock": 4,
+    "material": "steel",
+    "color": "white",
+    "releaseYear": "2022",
+    "isPopular": "yes"
+  },
+  {
+    "brand": "Stuhrling",
+    "name": "Stuhrling 3991.5",
+    "img": "./assets/img/Stuhrling_3991.5.jpg",
+    "gender": "woman",
+    "stock": 2,
+    "material": "plastic",
+    "color": "brown",
+    "releaseYear": "2017",
+    "isPopular": "yes"
+  }
+]
