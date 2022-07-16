@@ -1,5 +1,3 @@
-import { IFilters } from '../types/interfaces';
-
-export function setLocalStorage(key: string, value: IFilters): void {
+export function setLocalStorage<T>(key: string, value: T): void {
   localStorage.setItem(key, JSON.stringify(value));
 }

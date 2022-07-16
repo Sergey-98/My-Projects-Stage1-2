@@ -24,7 +24,9 @@
   <main>
     <aside class="toolbar">
       <section class="search">
-
+        <input type = "text" class = "input" placeholder = "Search" autocomplete="off">
+        <div class = "search-icon"></div>
+        <div class = "close-icon hide"></div>
       </section>
 
       <section class="filter-value">
@@ -40,44 +42,57 @@
         <div class = "gender">
           <h3 class = "gender-title">Gender:</h3>
           <div class = "gender-buttons">
-            <button class = "for-man">Man</button>
-            <button class = "for-woman">Woman</button>
+            <button class = "for-man" data-gender = "man">Man</button>
+            <button class = "for-woman" data-gender = "woman">Woman</button>
           </div>
           
         </div>
         <div class = "body-material">
           <h3 class = "material-title">Body material:</h3>
           <div class = "material-button">
-            <button class = "body-steel">Stainless steel</button>
-            <button class = "plastic">Plastic</button>
+            <button class = "steel" data-material = "steel">Stainless steel</button>
+            <button class = "plastic" data-material = "plastic">Plastic</button>
           </div>
         </div>
         <div class = "belt-color">
           <h3 class = "color-title">Belt color:</h3>
           <div class = "color-buttons">
-            <button class = "belt-black">Black</button>
-            <button class = "belt-brown">Brown</button>
-            <button class = "belt-red">Red</button>
-            <button class = "belt-white">White</button>
+            <button class = "belt-black" data-color = "black">Black</button>
+            <button class = "belt-brown" data-color = "brown">Brown</button>
+            <button class = "belt-red" data-color = "red">Red</button>
+            <button class = "belt-white" data-color = "white">White</button>
           </div>
         </div>
       </section>
       <section class="filter-range">
         <div class="quantity-in-stock">
-          <h3 class="quantity-title">Количество на складе:</h3>
+          <h3 class="quantity-title">Quantity in stock:</h3>
           <div class = "quantity">
-            <div class="quantity-slider"></div>
-            <div class="less-count"></div>
-            <div class="more-count"></div>
+            <div class = "value-stock">
+              <span class = "less"></span>
+              <span class = "more"></span>
+            </div>
+            <div class = "filter-stock">
+              <div class = "slider-track-stock"></div>
+              <input type = "range" class = "stock-slider-1">
+              <input type = "range" class = "stock-slider-2">
+            </div>
           </div>
         </div>
         <div class="release-year">
-          <h3 class="release-title">Год выхода на рынок:</h3>
+          <h3 class="release-title">Year release:</h3>
           <div class="release">
-            <div class="year-slider"></div>
-            <div class="year-earlier"></div>
-            <div class="year-later"></div>
-          </div>              
+            <div class = "value-years">
+              <span class = "year-earlier">
+              </span>
+              <span class = "year-later">
+              </span>
+            </div>
+            <div class = "filter-year">
+              <div class = "slider-track-year"></div>
+              <input type = "range" class = "release-slider-1">
+              <input type = "range" class = "release-slider-2">
+            </div>
         </div>
       </section>
       <section class = "popular">
@@ -85,20 +100,20 @@
         <input type="checkbox" class = "popular-checkbox">
       </section>
       <section class = "reset-buttons">
-        <button class = "reset-filter"></button>
-        <button class = "reset-all"></button>
+        <button class = "reset-filter">Reser filters</button>
+        <button class = "reset-all">Reset all</button>
       </section>
     </aside>
     <section class = "main-page">
       <div class = sorting>
         <h3 class = "sorting-title">Sorting</h3>
         <select class = "sorting-list">
-          <option class = "naming-AW"></option>
-          <option class = "naming-WA"></option>
-          <option class = "year-top"></option>
-          <option class = "year-bottom"></option>
-          <option class = "count-top"></option>
-          <option class = "count-bottom"></option>
+          <option class = "naming-AZ">By name, from A to Z</option>
+          <option class = "naming-ZA">By name, from Z to A</option>
+          <option class = "year-top">By year, ascending</option>
+          <option class = "year-bottom">By year, descending</option>
+          <option class = "stock-top">By stock, ascending</option>
+          <option class = "stock-bottom">By stock, descending</option>
         </select>
       </div>
       <div class = "cards">

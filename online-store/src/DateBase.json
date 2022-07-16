@@ -7,7 +7,7 @@
     "stock": 5,
     "material": "steel",
     "color": "white",
-    "releaseYear": "2019",
+    "releaseYear": 2019,
     "isPopular": "yes"
   },
   {
@@ -18,7 +18,7 @@
     "stock": 3,
     "material": "steel",
     "color": "black",
-    "releaseYear": "2020",
+    "releaseYear": 2020,
     "isPopular": "no"
   },
   {
@@ -29,7 +29,7 @@
     "stock": 4,
     "material": "steel",
     "color": "brown",
-    "releaseYear": "2019",
+    "releaseYear": 2019,
     "isPopular": "yes"
   },
   {
@@ -37,10 +37,10 @@
     "name": "CASIO Edifice EF-552-1AVEF",
     "img": "./assets/img/CASIO_Edifice_EF-552-1AVEF.jpg",
     "gender": "man",
-    "stock": 5,
+    "stock": 8,
     "material": "steel",
     "color": "black",
-    "releaseYear": "2020",
+    "releaseYear": 2020,
     "isPopular": "yes"
   },
   {
@@ -51,7 +51,7 @@
     "stock": 1,
     "material": "plastic",
     "color": "black",
-    "releaseYear": "2022",
+    "releaseYear": 2022,
     "isPopular": "no"
   },
   {
@@ -62,7 +62,7 @@
     "stock": 3,
     "material": "steel",
     "color": "black",
-    "releaseYear": "2018",
+    "releaseYear": 2018,
     "isPopular": "yes"
   },
   {
@@ -73,7 +73,7 @@
     "stock": 7,
     "material": "plastic",
     "color": "red",
-    "releaseYear": "2015",
+    "releaseYear": 2015,
     "isPopular": "no"
   },
   {
@@ -84,7 +84,7 @@
     "stock": 4,
     "material": "steel",
     "color": "white",
-    "releaseYear": "2022",
+    "releaseYear": 2022,
     "isPopular": "yes"
   },
   {
@@ -95,7 +95,7 @@
     "stock": 2,
     "material": "plastic",
     "color": "brown",
-    "releaseYear": "2017",
+    "releaseYear": 2017,
     "isPopular": "yes"
   }
 ]

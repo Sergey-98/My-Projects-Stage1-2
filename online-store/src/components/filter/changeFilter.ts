@@ -1,35 +1,19 @@
 import { drawCardList } from '../createCard/cardBlock';
-import data from '../../DateBase.json';
-import { IData } from '../../components/types/interfaces';
-import { IFilters } from '../types/interfaces';
+import { IData } from '../types/interfaces';
+import { selectCard } from './selectCard';
+import { sorting } from '../sorting/sorting';
 
-export function changeDataFilter() {
-  const filtersOptions = JSON.parse(localStorage.getItem('filters')) as IFilters;
-  let newData: IData[] = [];
-
-  const options: string[] = Object.keys(filtersOptions);
-  const arr = [];
-
-  for (let i = 0; i < options.length; i++) {
-    const item = options[i];
-    if (filtersOptions[item].length > 0) {
-      arr.push(filtersOptions[item]);
+export function changeFilter() {
+  selectCard();
+  const dataForBuild = JSON.parse(localStorage.getItem('Data') as string) as IData[];
+  if (dataForBuild.length === 0) {
+    const cards = document.querySelector<HTMLDivElement>('.cards');
+    if (cards) {
+      console.log('nodata!!!');
+      cards.innerHTML = `<h1 class = "no-data-message">Выбранных данных не существует!</h1>`;
     }
+  } else {
+    sorting();
+    drawCardList(dataForBuild);
   }
-  console.log('arr', arr);
-
-  for (let k = 0; k < data.length; k++) {
-    if (!arr[0]) {
-      k = data.length;
-    } else {
-      if (arr[0].includes(data[k].brand)) {
-        console.log('yes');
-        newData.push(data[k]);
-      }
-    }
-  }
-  newData = newData.length == 0 ? data : newData;
-  // const dateForBuild = new Set();
-  console.log(newData);
-  drawCardList(newData);
 }
