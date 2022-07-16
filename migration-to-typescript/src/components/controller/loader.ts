@@ -1,6 +1,6 @@
 class Loader {
   baseLink: string;
-  options: object;
+  options: { [key: string]: string | number };
   constructor(baseLink: string, options = {}) {
     this.baseLink = baseLink;
     this.options = options;
@@ -8,9 +8,9 @@ class Loader {
 
   getResp(
     { endpoint, options = {} }: { endpoint: string; options?: object },
-    callback = (): void => {
+    callback: <T>(data: T) => void = () => {
       console.error('No callback for GET response');
-    } // In the controller.ts file, the callback is redefined, where the data that we receive is specified
+    }
   ) {
     this.load('GET', endpoint, callback, options);
   }
@@ -24,7 +24,7 @@ class Loader {
     return res;
   }
 
-  makeUrl(options = {}, endpoint: string) {
+  makeUrl(options: Record<string, string | number>, endpoint: string) {
     const urlOptions = { ...this.options, ...options };
     let url = `${this.baseLink}${endpoint}?`;
     Object.keys(urlOptions).forEach((key) => {
