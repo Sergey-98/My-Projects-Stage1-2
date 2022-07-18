@@ -10,25 +10,15 @@
 
 <body>
   <header>
-    <span>Watch Shop</span>
-    <div class="basket-section">
-      <div class="basket">
-
-      </div>
-      <div class="basket-count">
-
-      </div>
-    </div>
+    <span class = "header-title">Watch Shop</span>
+    <section class="basket-section">
+      <div class="basket"></div>
+      <span class="basket-count">0</span>
+    </section>
   </header>
 
   <main>
     <aside class="toolbar">
-      <section class="search">
-        <input type = "text" class = "input" placeholder = "Search" autocomplete="off">
-        <div class = "search-icon"></div>
-        <div class = "close-icon hide"></div>
-      </section>
-
       <section class="filter-value">
         <div class = "manufacturer">
           <h3 class = "brand-title">Brend</h3>
@@ -68,31 +58,25 @@
         <div class="quantity-in-stock">
           <h3 class="quantity-title">Quantity in stock:</h3>
           <div class = "quantity">
-            <div class = "value-stock">
-              <span class = "less"></span>
-              <span class = "more"></span>
-            </div>
+            <span class = "less"></span>
             <div class = "filter-stock">
               <div class = "slider-track-stock"></div>
               <input type = "range" class = "stock-slider-1">
               <input type = "range" class = "stock-slider-2">
             </div>
+            <span class = "more"></span>
           </div>
         </div>
         <div class="release-year">
           <h3 class="release-title">Year release:</h3>
           <div class="release">
-            <div class = "value-years">
-              <span class = "year-earlier">
-              </span>
-              <span class = "year-later">
-              </span>
-            </div>
+              <span class = "year-earlier"></span>
             <div class = "filter-year">
               <div class = "slider-track-year"></div>
               <input type = "range" class = "release-slider-1">
               <input type = "range" class = "release-slider-2">
             </div>
+            <span class = "year-later"></span>
         </div>
       </section>
       <section class = "popular">
@@ -105,16 +89,23 @@
       </section>
     </aside>
     <section class = "main-page">
-      <div class = sorting>
-        <h3 class = "sorting-title">Sorting</h3>
-        <select class = "sorting-list">
-          <option class = "naming-AZ">By name, from A to Z</option>
-          <option class = "naming-ZA">By name, from Z to A</option>
-          <option class = "year-top">By year, ascending</option>
-          <option class = "year-bottom">By year, descending</option>
-          <option class = "stock-top">By stock, ascending</option>
-          <option class = "stock-bottom">By stock, descending</option>
-        </select>
+      <div class = "main-head">
+        <div class = sorting>
+          <h3 class = "sorting-title">Sorting</h3>
+          <select class = "sorting-list">
+            <option class = "naming-AZ">By name, from A to Z</option>
+            <option class = "naming-ZA">By name, from Z to A</option>
+            <option class = "year-top">By year, ascending</option>
+            <option class = "year-bottom">By year, descending</option>
+            <option class = "stock-top">By stock, ascending</option>
+            <option class = "stock-bottom">By stock, descending</option>
+          </select>
+        </div>
+        <div class="search">
+          <input type = "text" class = "input" placeholder = "Search" autocomplete="off">
+          <div class = "search-icon"></div>
+          <div class = "close-icon hide"></div>
+        </div>
       </div>
       <div class = "cards">
         

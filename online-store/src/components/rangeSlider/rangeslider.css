@@ -1,13 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
 .release, .quantity {
+  margin: auto;
   position: relative;
   width: 90%;
   background-color: inherit;
 }
+.year-earlier, .less {
+  margin-right: 2%;
+  margin-top: 3%;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 20px;
+}
+.year-later, .more {
+  margin-left: 2%;
+  margin-top: 3%;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 20px;
+}
 .filter-year, .filter-stock {
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 50px;
-  border: 1px solid #000000;
 }
 input[type="range"] {
   -webkit-appearance: none;
@@ -76,28 +92,3 @@ input[type="range"]:active::-webkit-slider-thumb {
   background-color: #ffffff;
   border: 3px solid #000000;
 }
-/* .value-years{
-  background-color: #3264fe;
-  width: 32%;
-  position: relative;
-  margin: auto;
-  padding: 10px 0;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: 500;
-  font-size: 25px;
-  color: #ffffff;
-} */
-/* .value-years:before{
-  content: "";
-  position: absolute;
-  height: 0;
-  width: 0;
-  border-top: 15px solid #3264fe;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  margin: auto;
-  bottom: -14px;
-  left: 0;
-  right: 0;
-} */

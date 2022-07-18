@@ -6,9 +6,10 @@ button {
 }
 button:hover {
   cursor: pointer;
-  background-color: khaki;
+  background-color: #9543ff;
+  color:cornsilk;
 }
 .active {
-  background-color: lavender;
-  color: navy;
+  background-color: #36007c;
+  color:cornsilk;
 }

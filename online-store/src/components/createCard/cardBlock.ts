@@ -1,5 +1,6 @@
 import { drawCard } from './card';
 import { IData } from '../../components/types/interfaces';
+import { basket } from '../basket/basket';
 
 export function drawCardList(data: IData[]): void {
   const cards = document.querySelector<HTMLDivElement>('.cards');
@@ -10,4 +11,5 @@ export function drawCardList(data: IData[]): void {
     const typ: IData = data[i];
     drawCard(typ);
   }
+  basket();
 }

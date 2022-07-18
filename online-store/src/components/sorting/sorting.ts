@@ -32,7 +32,7 @@ export function sorting() {
   if (sortList) {
     switch (Method) {
       case 'By name, from A to Z':
-        if (sortingData) {
+        if (sortingData.length > 0) {
           sortingData.sort(SortArrayAZ);
           setLocalStorage('Data', sortingData);
           setLocalStorage('Method', sortList.value);
@@ -42,7 +42,7 @@ export function sorting() {
         }
         break;
       case 'By name, from Z to A':
-        if (sortingData) {
+        if (sortingData.length > 0) {
           sortingData.sort(SortArrayZA);
           setLocalStorage('Data', sortingData);
           setLocalStorage('Method', sortList.value);

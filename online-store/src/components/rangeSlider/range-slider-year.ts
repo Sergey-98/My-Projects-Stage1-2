@@ -44,8 +44,8 @@ export function RangeSliderYear(
   if (sliderTrack && sliderOne && sliderTwo) {
     sliderTrack.style.background = `linear-gradient(to right, 
       #dadae5 ${(parseInt(sliderOne.value) / parseInt(sliderMaxValue)) * 100}% , 
-      #3264fe ${(parseInt(sliderOne.value) / parseInt(sliderMaxValue)) * 100}% , 
-      #3264fe ${(parseInt(sliderTwo.value) / parseInt(sliderMaxValue)) * 100}%, 
+      #36007c ${(parseInt(sliderOne.value) / parseInt(sliderMaxValue)) * 100}% , 
+      #36007c ${(parseInt(sliderTwo.value) / parseInt(sliderMaxValue)) * 100}%, 
       #dadae5 ${(parseInt(sliderTwo.value) / parseInt(sliderMaxValue)) * 100}%)`;
   }
 
@@ -94,7 +94,7 @@ export function RangeSliderYear(
     if (sliderOne && sliderTwo && sliderTrack) {
       const percent1 = (parseInt(sliderOne.value) / parseInt(sliderMaxValue)) * 100;
       const percent2 = (parseInt(sliderTwo.value) / parseInt(sliderMaxValue)) * 100;
-      sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
+      sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #36007c ${percent1}% , #36007c ${percent2}%, #dadae5 ${percent2}%)`;
     }
   }
   function setValue() {

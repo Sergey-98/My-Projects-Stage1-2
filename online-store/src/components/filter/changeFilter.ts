@@ -12,8 +12,6 @@ export function changeFilter() {
       cards.innerHTML = `<h1 class = "no-data-message">Выбранных товаров не обнаружено</h1>`;
     }
   } else {
-    // const dataForBuild = JSON.parse(localStorage.getItem('Data') as string) as IData[];
     sorting();
-    // drawCardList(dataForBuild);
   }
 }

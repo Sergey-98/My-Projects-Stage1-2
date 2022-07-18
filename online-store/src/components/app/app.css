@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.header-title {
+  margin-left: 5%;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+.brand-title,
+.gender-title,
+.material-title,
+.color-title,
+.quantity-title,
+.release-title {
+  font-family: 'Inter', sans-serif;
+} 
+
+.manufacturer {
+  display: flex;
+  flex-direction: column;
+}
+.gender {
+  display: flex;
+  flex-direction: column;
+}
+.body-material {
+  display: flex;
+  flex-direction: column;
+}
+.belt-color {
+  display: flex;
+  flex-direction: column;
+}
+.quantity-in-stock {
+  display: flex;
+  flex-direction: column;
+}
+.release {
+  display: flex;
+}
+.release-year {
+  display: flex;
+  flex-direction: column;
+}
+.quantity {
+  display: flex;
+}
+.popular {
+  margin: 5% 0;
+  display: flex;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+.popular-checkbox {
+  width: 20px;
+  height: 20px;
+}
+.reset-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.toolbar {
+  width: 25%;
+  border-right: 5px solid #36007c;
+}
+.main-page {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+.main-head {
+  display: flex;
+  justify-content: space-around;
+}
+.sorting-title {
+  font-family: 'Inter', sans-serif;
+}
+.sorting-list {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 90%;
+  background: inherit;
+  border: 2px solid #7520e4;
+  border-radius: 10px;
+}
+.sorting-list:focus {
+  font-weight: 600;
+  background: lavender;
+  border: 2px solid #7520e4;
+}

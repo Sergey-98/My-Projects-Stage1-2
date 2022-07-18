@@ -4,7 +4,6 @@ import { setLocalStorage } from '../localStorage/setLocalStorage';
 import { IFilters, IData } from '../types/interfaces';
 import { changeFilter } from '../filter/changeFilter';
 import { sorting } from '../sorting/sorting';
-import { activeButtons } from './activeLocalButtons';
 
 export function buttons() {
   const CasioBrand = document.querySelector<HTMLButtonElement>('.Casio');
@@ -53,7 +52,7 @@ export function buttons() {
     const Method = JSON.parse(localStorage.getItem('Method') as string) as string;
     sortList.value = Method;
   }
-  activeButtons();
+
   if (CasioBrand && EmporioBrand && DieselBrand && StuhrlingBrand) {
     [CasioBrand, EmporioBrand, DieselBrand, StuhrlingBrand].forEach((elem): void => {
       elem.addEventListener('click', (): void => {

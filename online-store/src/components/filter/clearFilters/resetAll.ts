@@ -12,6 +12,7 @@ export function resetAll() {
   const close = document.querySelector<HTMLDivElement>('.close-icon');
   const sortList = document.querySelector<HTMLInputElement>('.sorting-list');
   const buttons = document.querySelectorAll<HTMLButtonElement>('button');
+  const count = document.querySelector<HTMLDivElement>('.basket-count');
 
   if (reset) {
     reset.addEventListener('click', (): void => {
@@ -43,6 +44,9 @@ export function resetAll() {
       year.push(elem.releaseYear);
       stock.push(elem.stock);
     });
+    if (count) {
+      count.textContent = String(0);
+    }
     year = year.sort((a, b) => a - b);
     stock = stock.sort((a, b) => a - b);
     setLocalStorage('yearEarlier', year[0]);
@@ -50,6 +54,7 @@ export function resetAll() {
     setLocalStorage('stockLess', stock[0]);
     setLocalStorage('stockMore', stock[stock.length - 1]);
     setLocalStorage('searchItem', '');
+    setLocalStorage('inBasket', []);
     Slider();
     changeFilter();
   }
