@@ -5,15 +5,17 @@ import { changeFilter } from '../../filter/changeFilter';
 import data from '../../../DateBase.json';
 import { Slider } from '../../rangeSlider/sliders';
 
-export function clearFilters() {
-  const clear = document.querySelector<HTMLButtonElement>('.reset-filter');
+export function resetAll() {
+  const reset = document.querySelector<HTMLButtonElement>('.reset-all');
   const popular = document.querySelector<HTMLInputElement>('.popular-checkbox');
   const input = document.querySelector<HTMLInputElement>('.input');
   const close = document.querySelector<HTMLDivElement>('.close-icon');
+  const sortList = document.querySelector<HTMLInputElement>('.sorting-list');
   const buttons = document.querySelectorAll<HTMLButtonElement>('button');
 
-  if (clear) {
-    clear.addEventListener('click', (): void => {
+  if (reset) {
+    reset.addEventListener('click', (): void => {
+      localStorage.clear();
       initial();
     });
   }
@@ -22,6 +24,9 @@ export function clearFilters() {
       buttons.forEach((elem): void => {
         elem.classList.remove('active');
       });
+    }
+    if (sortList) {
+      sortList.value = 'By name, from A to Z';
     }
     const f = filter as IFilters;
     setLocalStorage('filters', f);

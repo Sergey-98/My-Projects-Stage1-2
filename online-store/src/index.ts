@@ -1,10 +1,6 @@
 import './global.css';
-import { Slider } from './components/rangeSlider/sliders';
-import { clearFilters } from './components/filter/clearFilters/clearfilters';
-import { buttons } from './components/changeButtons/changeButtons';
-import { search } from './components/search/search';
+import App from './components/app/app';
 
-buttons();
-Slider();
-clearFilters();
-search();
+const app = new App();
+
+app.start();

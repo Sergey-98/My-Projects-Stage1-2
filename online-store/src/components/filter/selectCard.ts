@@ -5,7 +5,8 @@ import { IFilters } from '../types/interfaces';
 
 export function selectCard() {
   const filters = JSON.parse(localStorage.getItem('filters') as string) as IFilters;
-  let CopyData = data;
+  const searchData = JSON.parse(localStorage.getItem('searchItem') as string) as string;
+  let CopyData: IData[] = data;
   let arr: IData[] = [];
 
   const brend: string[] = filters.filterByBrend;
@@ -79,10 +80,18 @@ export function selectCard() {
     CopyData = arr;
     arr = [];
   }
+  if (searchData) {
+    for (let k = 0; k < CopyData.length; k++) {
+      if (CopyData[k].name.toLowerCase().indexOf(searchData.toLowerCase()) !== -1) {
+        arr.push(CopyData[k]);
+      }
+    }
+    CopyData = arr;
+    arr = [];
+  }
   if (CopyData.length !== 0) {
     CopyData;
   }
-  // CopyData = CopyData.length == 0 ? data : CopyData;
   const dataB = [...new Set(CopyData)];
   setLocalStorage('Data', dataB);
 }

@@ -9,7 +9,7 @@ export function changeFilter() {
     const cards = document.querySelector<HTMLDivElement>('.cards');
     if (cards) {
       console.log('nodata!!!');
-      cards.innerHTML = `<h1 class = "no-data-message">Выбранных данных не существует!</h1>`;
+      cards.innerHTML = `<h1 class = "no-data-message">Выбранных товаров не обнаружено</h1>`;
     }
   } else {
     // const dataForBuild = JSON.parse(localStorage.getItem('Data') as string) as IData[];

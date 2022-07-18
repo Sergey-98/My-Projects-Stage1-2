@@ -1,8 +1,10 @@
+import './buttons.css';
 import { filter } from '../filter/filter';
 import { setLocalStorage } from '../localStorage/setLocalStorage';
 import { IFilters, IData } from '../types/interfaces';
 import { changeFilter } from '../filter/changeFilter';
 import { sorting } from '../sorting/sorting';
+import { activeButtons } from './activeLocalButtons';
 
 export function buttons() {
   const CasioBrand = document.querySelector<HTMLButtonElement>('.Casio');
@@ -46,21 +48,19 @@ export function buttons() {
   if (!sortMethod && sortList) {
     setLocalStorage('Method', sortList.value);
     sorting();
-    // sortList.value = sortMethod;
   }
   if (sortList) {
     const Method = JSON.parse(localStorage.getItem('Method') as string) as string;
     sortList.value = Method;
   }
-
-  // sorting(dataForBuild);
-
+  activeButtons();
   if (CasioBrand && EmporioBrand && DieselBrand && StuhrlingBrand) {
     [CasioBrand, EmporioBrand, DieselBrand, StuhrlingBrand].forEach((elem): void => {
       elem.addEventListener('click', (): void => {
         const dataS = elem.dataset.brand as string;
         const filtersOptions = JSON.parse(localStorage.getItem('filters') as string) as IFilters;
         const filter = filtersOptions.filterByBrend as string[];
+        elem.classList.toggle('active');
         AddFilters(dataS, filter, filtersOptions);
       });
     });
@@ -71,6 +71,7 @@ export function buttons() {
         const dataS = elem.dataset.gender as string;
         const filtersOptions = JSON.parse(localStorage.getItem('filters') as string) as IFilters;
         const filter = filtersOptions.filterByGender as string[];
+        elem.classList.toggle('active');
         AddFilters(dataS, filter, filtersOptions);
       });
     });
@@ -81,6 +82,7 @@ export function buttons() {
         const dataS = elem.dataset.material as string;
         const filtersOptions = JSON.parse(localStorage.getItem('filters') as string) as IFilters;
         const filter = filtersOptions.filterByMaterial as string[];
+        elem.classList.toggle('active');
         AddFilters(dataS, filter, filtersOptions);
       });
     });
@@ -91,6 +93,7 @@ export function buttons() {
         const dataS = elem.dataset.color as string;
         const filtersOptions = JSON.parse(localStorage.getItem('filters') as string) as IFilters;
         const filter = filtersOptions.filterByColor as string[];
+        elem.classList.toggle('active');
         AddFilters(dataS, filter, filtersOptions);
       });
     });
@@ -114,8 +117,6 @@ export function buttons() {
   }
 
   sortList?.addEventListener('change', () => {
-    // const sortMethod = JSON.parse(localStorage.getItem('Method') as string) as string;
-    // const sortingData = JSON.parse(localStorage.getItem('Data') as string) as IData[];
     sorting();
   });
 

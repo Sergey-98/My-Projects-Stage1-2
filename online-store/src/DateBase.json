@@ -12,18 +12,18 @@
   },
   {
     "brand": "Emporio-Armani",
-    "name": "EMPORIO ARMANI AR5890",
+    "name": "Emporio Armani AR5890",
     "img": "./assets/img/EMPORIO_ARMANI_AR5890.jpg",
     "gender": "man",
     "stock": 3,
     "material": "steel",
-    "color": "black",
+    "color": "brown",
     "releaseYear": 2020,
     "isPopular": "no"
   },
   {
     "brand": "Diesel",
-    "name": "DIESEL DZ7314",
+    "name": "Diesel DZ7314",
     "img": "./assets/img/DIESEL_DZ7314.jpg",
     "gender": "man",
     "stock": 4,
@@ -34,7 +34,7 @@
   },
   {
     "brand": "Casio",
-    "name": "CASIO Edifice EF-552-1AVEF",
+    "name": "Casio Edifice EF-552-1AVEF",
     "img": "./assets/img/CASIO_Edifice_EF-552-1AVEF.jpg",
     "gender": "man",
     "stock": 8,
@@ -84,7 +84,7 @@
     "stock": 4,
     "material": "steel",
     "color": "white",
-    "releaseYear": 2022,
+    "releaseYear": 2021,
     "isPopular": "yes"
   },
   {
@@ -100,7 +100,7 @@
   },
   {
     "brand": "Diesel",
-    "name": "DIESEL DZ4318",
+    "name": "Diesel DZ4318",
     "img": "./assets/img/DIESEL_DZ4318.jpg",
     "gender": "man",
     "stock": 9,
@@ -111,7 +111,7 @@
   },
   {
     "brand": "Diesel",
-    "name": "DIESEL DZ7395",
+    "name": "Diesel DZ7395",
     "img": "./assets/img/DIESEL_DZ7395.jpg",
     "gender": "man",
     "stock": 4,
@@ -122,7 +122,7 @@
   },
   {
     "brand": "Emporio-Armani",
-    "name": "EMPORIO ARMANI AR5905",
+    "name": "Emporio Armani AR5905",
     "img": "./assets/img/EMPORIO_ARMANI_AR5905.jpg",
     "gender": "man",
     "stock": 12,
@@ -133,7 +133,7 @@
   },
   {
     "brand": "Casio",
-    "name": "CASIO AQ-S800W-1B",
+    "name": "Casio AQ-S800W-1B",
     "img": "./assets/img/CASIO_AQ-S800W-1B.jpg",
     "gender": "man",
     "stock": 10,
@@ -144,7 +144,7 @@
   },
   {
     "brand": "Diesel",
-    "name": "DIESEL DZ1657",
+    "name": "Diesel DZ1657",
     "img": "./assets/img/DIESEL_DZ1657.jpg",
     "gender": "man",
     "stock": 9,
@@ -155,7 +155,7 @@
   },
   {
     "brand": "Casio",
-    "name": "CASIO CA-53WF-1B",
+    "name": "Casio CA-53WF-1B",
     "img": "./assets/img/CASIO_CA-53WF-1B.jpg",
     "gender": "man",
     "stock": 7,
@@ -166,7 +166,7 @@
   },
   {
     "brand": "Casio",
-    "name": "CASIO AQ-230A-1D",
+    "name": "Casio AQ-230A-1D",
     "img": "./assets/img/CASIO_AQ-230A-1D.jpg",
     "gender": "man",
     "stock": 3,
@@ -177,7 +177,7 @@
   },
   {
     "brand": "Diesel",
-    "name": "DIESEL DZ5546",
+    "name": "Diesel DZ5546",
     "img": "./assets/img/DIESEL_DZ5546.jpg",
     "gender": "woman",
     "stock": 10,
@@ -188,7 +188,7 @@
   },
   {
     "brand": "Diesel",
-    "name": "DIESEL DZDZ5572",
+    "name": "Diesel DZDZ5572",
     "img": "./assets/img/DIESEL_DZ5572.jpg",
     "gender": "woman",
     "stock": 5,
@@ -205,6 +205,50 @@
     "stock": 9,
     "material": "plastic",
     "color": "brown",
+    "releaseYear": 2017,
+    "isPopular": "yes"
+  },
+  {
+    "brand": "Stuhrling",
+    "name": "Stuhrling Original 407A.33XX1",
+    "img": "./assets/img/Stuhrling_Original_407A.33XX1.jpg",
+    "gender": "man",
+    "stock": 5,
+    "material": "steel",
+    "color": "black",
+    "releaseYear": 2020,
+    "isPopular": "yes"
+  },
+  {
+    "brand": "Stuhrling",
+    "name": "Stuhrling Original 390.334XK1",
+    "img": "./assets/img/Stuhrling_Original_390.334XK1.jpg",
+    "gender": "man",
+    "stock": 5,
+    "material": "plastic",
+    "color": "red",
+    "releaseYear": 2016,
+    "isPopular": "no"
+  },
+  {
+    "brand": "Stuhrling",
+    "name": "Stuhrling 5015.3",
+    "img": "./assets/img/STUHRLING_5015.3.jpg",
+    "gender": "man",
+    "stock": 2,
+    "material": "steel",
+    "color": "white",
+    "releaseYear": 2011,
+    "isPopular": "yes"
+  },
+  {
+    "brand": "Emporio-Armani",
+    "name": "Emporio Armani AR1400",
+    "img": "./assets/img/Emporio_Armani_AR1400.jpg",
+    "gender": "man",
+    "stock": 9,
+    "material": "steel",
+    "color": "black",
     "releaseYear": 2017,
     "isPopular": "yes"
   }
