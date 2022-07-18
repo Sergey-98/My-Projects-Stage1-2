@@ -79,7 +79,7 @@ export function selectCard() {
     CopyData = arr;
     arr = [];
   }
-  if (CopyData.length != 0) {
+  if (CopyData.length !== 0) {
     CopyData;
   }
   // CopyData = CopyData.length == 0 ? data : CopyData;

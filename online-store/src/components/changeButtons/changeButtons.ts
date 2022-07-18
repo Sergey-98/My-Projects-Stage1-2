@@ -2,6 +2,7 @@ import { filter } from '../filter/filter';
 import { setLocalStorage } from '../localStorage/setLocalStorage';
 import { IFilters, IData } from '../types/interfaces';
 import { changeFilter } from '../filter/changeFilter';
+import { sorting } from '../sorting/sorting';
 
 export function buttons() {
   const CasioBrand = document.querySelector<HTMLButtonElement>('.Casio');
@@ -17,6 +18,8 @@ export function buttons() {
   const RedColor = document.querySelector<HTMLDivElement>('.belt-red');
   const WhiteColor = document.querySelector<HTMLDivElement>('.belt-white');
   const popular = document.querySelector<HTMLInputElement>('.popular-checkbox');
+  const sortList = document.querySelector<HTMLInputElement>('.sorting-list');
+  const sortMethod = JSON.parse(localStorage.getItem('Method') as string) as string;
 
   const filtersOptions = JSON.parse(localStorage.getItem('filters') as string) as IFilters;
   const dataForBuild = JSON.parse(localStorage.getItem('Data') as string) as IData[];
@@ -40,6 +43,17 @@ export function buttons() {
     const d: IData[] = [];
     setLocalStorage('Data', d);
   }
+  if (!sortMethod && sortList) {
+    setLocalStorage('Method', sortList.value);
+    sorting();
+    // sortList.value = sortMethod;
+  }
+  if (sortList) {
+    const Method = JSON.parse(localStorage.getItem('Method') as string) as string;
+    sortList.value = Method;
+  }
+
+  // sorting(dataForBuild);
 
   if (CasioBrand && EmporioBrand && DieselBrand && StuhrlingBrand) {
     [CasioBrand, EmporioBrand, DieselBrand, StuhrlingBrand].forEach((elem): void => {
@@ -98,6 +112,12 @@ export function buttons() {
       }
     });
   }
+
+  sortList?.addEventListener('change', () => {
+    // const sortMethod = JSON.parse(localStorage.getItem('Method') as string) as string;
+    // const sortingData = JSON.parse(localStorage.getItem('Data') as string) as IData[];
+    sorting();
+  });
 
   function AddFilters(dataS: string, filter: string[], filtersOptions: IFilters): void {
     if (filter && filter.includes(dataS)) {
