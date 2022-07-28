@@ -1,6 +1,6 @@
 import './rangeslider.css';
-import { RangeSliderStock } from './range-slider-stock';
-import { RangeSliderYear } from './range-slider-year';
+import { rangeSliderStock } from './range-slider-stock';
+import { rangeSliderYear } from './range-slider-year';
 import data from '../../DateBase.json';
 import { setLocalStorage } from '../localStorage/setLocalStorage';
 
@@ -28,7 +28,7 @@ export function Slider() {
     setLocalStorage('stockMore', stock[stock.length - 1]);
   }
 
-  RangeSliderYear(
+  rangeSliderYear(
     '.release-slider-1',
     '.release-slider-2',
     '.year-earlier',
@@ -37,7 +37,7 @@ export function Slider() {
     year[0],
     year[year.length - 1]
   );
-  RangeSliderStock(
+  rangeSliderStock(
     '.stock-slider-1',
     '.stock-slider-2',
     '.less',

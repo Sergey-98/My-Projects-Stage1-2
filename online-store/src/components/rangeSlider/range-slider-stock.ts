@@ -2,7 +2,7 @@ import { setLocalStorage } from '../localStorage/setLocalStorage';
 import { IFilters } from '../types/interfaces';
 import { changeFilter } from '../filter/changeFilter';
 
-export function RangeSliderStock(
+export function rangeSliderStock(
   SlideOne: string,
   SlideTwo: string,
   ValueOne: string,
@@ -39,8 +39,10 @@ export function RangeSliderStock(
   }
 
   const sliderMaxValue: string = (sliderOne as HTMLInputElement).max;
+
   setValue();
   changeFilter();
+
   if (sliderTrack && sliderOne && sliderTwo) {
     sliderTrack.style.background = `linear-gradient(to right, 
       #dadae5 ${(parseInt(sliderOne.value) / parseInt(sliderMaxValue)) * 100}% , 
@@ -60,6 +62,7 @@ export function RangeSliderStock(
       }
     });
   }
+
   if (sliderTwo) {
     sliderTwo.addEventListener('input', () => {
       slideTwo();
@@ -81,6 +84,7 @@ export function RangeSliderStock(
     }
     fillColor();
   }
+
   function slideTwo() {
     if (sliderOne && sliderTwo && displayValTwo) {
       if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
@@ -90,6 +94,7 @@ export function RangeSliderStock(
     }
     fillColor();
   }
+
   function fillColor() {
     if (sliderOne && sliderTwo && sliderTrack) {
       const percent1 = (parseInt(sliderOne.value) / parseInt(sliderMaxValue)) * 100;
@@ -97,6 +102,7 @@ export function RangeSliderStock(
       sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #36007c ${percent1}% , #36007c ${percent2}%, #dadae5 ${percent2}%)`;
     }
   }
+
   function setValue() {
     const filters = JSON.parse(localStorage.getItem('filters') as string) as IFilters;
     const stock = filters.filterByQuantity as string[];

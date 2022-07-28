@@ -9,7 +9,7 @@ export function sorting() {
   const sortList = document.querySelector<HTMLInputElement>('.sorting-list');
   const Method = sortList?.value;
   if (!sortingData) {
-    sortingData = data;
+    sortingData = data as IData[];
   }
   function SortArrayAZ(x: IData, y: IData) {
     if (x.name < y.name) {

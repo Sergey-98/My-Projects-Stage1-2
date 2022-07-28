@@ -15,7 +15,7 @@ export function drawCard(data: IData) {
       <span class = "card-gender">Gender: ${data.gender}</span>
       <span class = "card-material">Body material: ${data.material}</span>
       <span class = "card-color">Belt color: ${data.color}</span>
-      <span class = "card-popular">Popular: ${data.isPopular}</span>
+      <span class = "card-popular">Popular: ${data.popularItem}</span>
       `;
     cards.append(card);
   }

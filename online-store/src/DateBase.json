@@ -8,7 +8,7 @@
     "material": "steel",
     "color": "white",
     "releaseYear": 2019,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Emporio-Armani",
@@ -19,7 +19,7 @@
     "material": "steel",
     "color": "brown",
     "releaseYear": 2020,
-    "isPopular": "no"
+    "popularItem": "no"
   },
   {
     "brand": "Diesel",
@@ -30,7 +30,7 @@
     "material": "steel",
     "color": "brown",
     "releaseYear": 2019,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Casio",
@@ -41,7 +41,7 @@
     "material": "steel",
     "color": "black",
     "releaseYear": 2020,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Stuhrling",
@@ -52,7 +52,7 @@
     "material": "plastic",
     "color": "red",
     "releaseYear": 2022,
-    "isPopular": "no"
+    "popularItem": "no"
   },
   {
     "brand": "Casio",
@@ -63,7 +63,7 @@
     "material": "steel",
     "color": "black",
     "releaseYear": 2018,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Casio",
@@ -74,7 +74,7 @@
     "material": "plastic",
     "color": "red",
     "releaseYear": 2015,
-    "isPopular": "no"
+    "popularItem": "no"
   },
   {
     "brand": "Emporio-Armani",
@@ -85,7 +85,7 @@
     "material": "steel",
     "color": "white",
     "releaseYear": 2021,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Stuhrling",
@@ -96,7 +96,7 @@
     "material": "plastic",
     "color": "brown",
     "releaseYear": 2017,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Diesel",
@@ -107,7 +107,7 @@
     "material": "steel",
     "color": "black",
     "releaseYear": 2018,
-    "isPopular": "no"
+    "popularItem": "no"
   },
   {
     "brand": "Diesel",
@@ -118,7 +118,7 @@
     "material": "steel",
     "color": "black",
     "releaseYear": 2020,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Emporio-Armani",
@@ -129,7 +129,7 @@
     "material": "steel",
     "color": "black",
     "releaseYear": 2021,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Casio",
@@ -140,7 +140,7 @@
     "material": "plastic",
     "color": "black",
     "releaseYear": 2009,
-    "isPopular": "no"
+    "popularItem": "no"
   },
   {
     "brand": "Diesel",
@@ -151,7 +151,7 @@
     "material": "steel",
     "color": "black",
     "releaseYear": 2012,
-    "isPopular": "no"
+    "popularItem": "no"
   },
   {
     "brand": "Casio",
@@ -162,7 +162,7 @@
     "material": "plastic",
     "color": "black",
     "releaseYear": 2009,
-    "isPopular": "no"
+    "popularItem": "no"
   },
   {
     "brand": "Casio",
@@ -173,7 +173,7 @@
     "material": "steel",
     "color": "white",
     "releaseYear": 2009,
-    "isPopular": "no"
+    "popularItem": "no"
   },
   {
     "brand": "Diesel",
@@ -184,7 +184,7 @@
     "material": "plastic",
     "color": "white",
     "releaseYear": 2014,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Diesel",
@@ -195,7 +195,7 @@
     "material": "steel",
     "color": "white",
     "releaseYear": 2019,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Emporio-Armani",
@@ -206,7 +206,7 @@
     "material": "plastic",
     "color": "brown",
     "releaseYear": 2017,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Stuhrling",
@@ -217,7 +217,7 @@
     "material": "steel",
     "color": "black",
     "releaseYear": 2020,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Stuhrling",
@@ -228,7 +228,7 @@
     "material": "plastic",
     "color": "red",
     "releaseYear": 2016,
-    "isPopular": "no"
+    "popularItem": "no"
   },
   {
     "brand": "Stuhrling",
@@ -239,7 +239,7 @@
     "material": "steel",
     "color": "white",
     "releaseYear": 2011,
-    "isPopular": "yes"
+    "popularItem": "yes"
   },
   {
     "brand": "Emporio-Armani",
@@ -250,6 +250,6 @@
     "material": "steel",
     "color": "black",
     "releaseYear": 2017,
-    "isPopular": "yes"
+    "popularItem": "yes"
   }
 ]

@@ -1,12 +1,12 @@
 import { IFilters } from '../types/interfaces';
 
-export function activeButtons() {
+export function activateButtons() {
   const filters = JSON.parse(localStorage.getItem('filters') as string) as IFilters;
   const buttons = document.querySelectorAll<HTMLButtonElement>('button');
-  const brend: string[] = filters.filterByBrend;
-  const gender: string[] = filters.filterByGender;
-  const material: string[] = filters.filterByMaterial;
-  const color: string[] = filters.filterByColor;
+  const brend = filters.filterByBrend;
+  const gender = filters.filterByGender;
+  const material = filters.filterByMaterial;
+  const color = filters.filterByColor;
 
   changeActive(brend);
   changeActive(gender);
@@ -14,14 +14,12 @@ export function activeButtons() {
   changeActive(color);
 
   function changeActive(name: string[]): void {
-    for (let i = 0; i < name.length; i++) {
+    name.forEach((item) => {
       buttons.forEach((elem): void => {
-        if (elem) {
-          if (name[i].toLowerCase() === elem.textContent?.toLowerCase()) {
-            elem.classList.add('active');
-          }
+        if (elem && item.toLowerCase() === elem.textContent?.toLowerCase()) {
+          elem.classList.add('active');
         }
       });
-    }
+    });
   }
 }

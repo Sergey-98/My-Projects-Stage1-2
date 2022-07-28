@@ -2,22 +2,21 @@ export interface IData {
   brand: string;
   name: string;
   img: string;
-  gender: string;
+  gender: 'man' | 'woman';
   stock: number;
   material: string;
   color: string;
   releaseYear: number;
-  isPopular: string;
+  popularItem: string;
 }
-
 export interface IFilters {
-  filterByBrend: string[] | [];
-  filterByGender: string[] | [];
-  filterByMaterial: string[] | [];
-  filterByColor: string[] | [];
+  filterByBrend: string[];
+  filterByGender: string[];
+  filterByMaterial: string[];
+  filterByColor: string[];
   filterByQuantity: number[] | [];
   filterByRelease: number[] | [];
-  isPopular?: string[] | [];
+  popularItem?: string[];
 }
 export interface ISet {
   dataS: string;

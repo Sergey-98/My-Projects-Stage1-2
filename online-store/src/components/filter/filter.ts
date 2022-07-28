@@ -5,5 +5,5 @@ export const filter: object = {
   filterByColor: [],
   filterByQuantity: [],
   filterByRelease: [],
-  isPopular: [],
+  popularItem: [],
 };

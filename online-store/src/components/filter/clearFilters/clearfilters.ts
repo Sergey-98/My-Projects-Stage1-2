@@ -17,6 +17,7 @@ export function clearFilters() {
       initial();
     });
   }
+
   function initial() {
     if (buttons) {
       buttons.forEach((elem): void => {
