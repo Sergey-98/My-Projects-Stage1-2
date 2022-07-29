@@ -1,0 +1,33 @@
+.car {
+  display: flex;
+
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1%;
+  padding: 1% 0;
+  border-bottom: 2px dashed #191970;
+}
+.car-img {
+  border: 1px solid red;
+  width: 50px;
+  height: 50px;
+}
+.select,
+.remove {
+  color: #000080;
+  background-color: #ADD8E6;
+  font-size: 12px;
+}
+
+.start, 
+.stop {
+  color: #E6E6FA;
+  background-color: inherit;
+  border-color: #E6E6FA;
+}
+
+.active {
+  color: #191970;
+  background-color: inherit;
+  border-color: #191970;
+}

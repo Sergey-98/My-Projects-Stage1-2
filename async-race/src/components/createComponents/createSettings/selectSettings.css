@@ -1,0 +1,56 @@
+.select-settings {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.create-car {
+  display: flex;
+  gap: 5px;
+}
+.update-car {
+  display: flex;
+  gap: 5px;
+}
+.settings-buttons {
+  display: flex;
+  gap: 33px;
+}
+.input {
+  padding-left: 5px;
+  color: #E0FFFF;
+  background-color: #0000CD;
+  border-radius: 5px;
+  border-color: #4682B4;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+}
+.input:focus {
+  color: #008080;
+  background-color: #00FFFF;
+  border-radius: 5px;
+}
+button {
+  padding: 0 5px;
+  color: #008080;
+  background-color: #87CEFA;
+  border-radius: 5px;
+  border-color: #4682B4;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+}
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  color: #0000CD;
+  background-color: #E0FFFF;
+}
+input[type="color"]:hover {
+  cursor: pointer;
+}
+input[type="text"] {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,13 @@
+.page-buttons {
+  margin-bottom: 3%;
+}
+.garage-button, 
+.winners-button {
+  padding: 5px;
+  color: #E0FFFF;
+  background-color: #4B0082;
+  border-radius: 5px;
+  border-color: #E6E6FA;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+}
