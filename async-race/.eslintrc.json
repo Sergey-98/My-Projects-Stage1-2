@@ -27,6 +27,6 @@
         "@typescript-eslint/no-explicit-any": 2,
         "@typescript-eslint/no-unsafe-argument": 2,
         "max-lines-per-function": ["error", 40],
-        "comma-dangle": ["error", "never"]
+        "comma-dangle": ["always", "never"]
     }
 }

@@ -12,3 +12,9 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 15px;
 }
+
+.pagination-buttons {
+  margin: 2% 0 3% 0;
+  display: flex;
+  gap: 10px;
+}

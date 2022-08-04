@@ -1,4 +1,4 @@
 import './global.css';
-import { app } from './components/app/app';
+import { appGarage } from './components/Garage/app/appGarage';
 
-app();
+appGarage();
