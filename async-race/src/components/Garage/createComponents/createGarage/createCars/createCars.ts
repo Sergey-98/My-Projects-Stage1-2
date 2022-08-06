@@ -1,12 +1,8 @@
 import './cars.css';
-import { activateButtonsOnCard } from '../../../actionButtons/buttonsOnCard/buttonsOnCard';
+import { removeCar, selectCar } from '../../../actionButtons/buttonsOnCard/buttonsOnCard';
 
 export function createCar(name: string, id: number, color: string) {
   const carsInGarage = document.querySelector<HTMLDivElement>('.cars-in-garage');
-  // const count = document.querySelector<HTMLDivElement>('.total-number');
-  // if (count) {
-  //   count.textContent = String(Number(count.textContent as string) + 1);
-  // }
   const car = document.createElement('div');
   car.classList.add('car');
   car.dataset.id = String(id);
@@ -28,5 +24,14 @@ export function createCar(name: string, id: number, color: string) {
     </div>
   `;
   carsInGarage?.append(car);
-  activateButtonsOnCard();
+
+  const [select, remove] = [`.select-${id}`, `.remove-${id}`].map((elem) => document.querySelector<HTMLButtonElement>(elem));
+
+  select?.addEventListener('click', () => {
+    selectCar(Number(select.dataset.id));
+  });
+
+  remove?.addEventListener('click', () => {
+    removeCar(Number(remove.dataset.id));
+  });
 }

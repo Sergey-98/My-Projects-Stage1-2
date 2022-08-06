@@ -13,3 +13,9 @@ export type CreateDataResponse = {
   name: string;
   color: string;
 };
+
+export type Winners = {
+  id: number;
+  wins: number;
+  time: number;
+}

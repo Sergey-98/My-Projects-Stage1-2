@@ -1,4 +1,5 @@
 import './selectSettings.css';
+import { update } from '../../actionButtons/buttonsOnCard/buttonsOnCard';
 
 export function createCarSettings() {
   const main = document.querySelector<HTMLElement>('main');
@@ -22,4 +23,16 @@ export function createCarSettings() {
     </div>
   `;
   main?.append(settings);
+
+  const updateButton = document.querySelector<HTMLButtonElement>('.update-button');
+  updateButton?.addEventListener('click', async () => {
+    const [updateInput, updateColor] = ['.update-input', '.update-color'].map((item) =>
+    document.querySelector<HTMLInputElement>(item)
+    );
+    if (updateInput && updateColor) {
+      const id = JSON.parse(localStorage.getItem('idForUpdate') as string);
+      update(id, updateInput, updateColor);
+      localStorage.removeItem('idForUpdate');
+    }
+  });
 }

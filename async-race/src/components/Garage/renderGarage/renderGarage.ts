@@ -33,52 +33,54 @@ export function renderGarage(data: Car[]) {
   const renderData = paginationGarage(data, activePage);
   renderCards(renderData, activePage);
 
-  showPaginationButtons(
-    document.querySelector('.cars-in-garage') as HTMLDivElement,
-    slicePageData(data, 7).length,
-  );
+  showPaginationButtons();
 }
 
-export function renderCards(renderData: Car[], activePage: number) {
+export async function renderCards(renderData: Car[], activePage: number) {
+  const cards = document.querySelector<HTMLDivElement>('.cars-in-garage');
+  if (cards) {
+    cards.innerHTML = '';
+  }
   renderData.forEach((elem) => {
     createCar(elem.name, elem.id, elem.color);
   });
   
   const pageNumber = document.querySelector<HTMLSpanElement>('.page-number');
-  if(pageNumber) {
-    pageNumber.innerHTML = `#${activePage}`; 
+  const count = document.querySelector<HTMLDivElement>('.total-number');
+  const data = (await getData('http://127.0.0.1:3000/garage')) as Car[];
+  if(pageNumber && count) {
+    pageNumber.innerHTML = `#${activePage}`;
+    count.textContent = String(data.length);
   }
 }
 
-function showPaginationButtons(cars: HTMLDivElement, total: number) {
+export function showPaginationButtons() {
   const [next, prev] = ['.next-page', '.prev-page'].map((elem) => document.querySelector(elem));
   
   next.addEventListener('click', async () => {
     const data = await getData('http://127.0.0.1:3000/garage') as Car[];
     const page = JSON.parse(localStorage.getItem('activePage') as string);
-    showNext(page, cars, total, data);
+    showNext(page, data);
   });
   prev.addEventListener('click', async () => {
     const data = await getData('http://127.0.0.1:3000/garage') as Car[];
     const page = JSON.parse(localStorage.getItem('activePage') as string);
-    showPrev(page, cars, total, data);
+    showPrev(page, data);
   });
 }
 
-function showNext(activePage: number, pagination: HTMLDivElement, total: number, data: Car[]) {
-  if (activePage < total) {
-    console.log('next');
+export async function showNext(activePage: number, data: Car[]) {
+  if (activePage < slicePageData(data, 7).length) {
     activePage += 1;
     setLocalStorage('activePage', activePage);
-    pagination.innerHTML = '';
     renderCards(paginationGarage(data, activePage), activePage);
   }
 }
-function showPrev(activePage: number, pagination: HTMLDivElement, total: number, data: Car[]) {
+export function showPrev(activePage: number, data: Car[]) {
   if (activePage > 1) {
     activePage -= 1;
     setLocalStorage('activePage', activePage);
-    pagination.innerHTML = '';
+    // pagination.innerHTML = '';
     renderCards(paginationGarage(data, activePage), activePage);
   }
 }
