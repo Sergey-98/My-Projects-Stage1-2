@@ -1,6 +1,4 @@
 import './garage.css';
-import { getData } from '../../garageApi/getData';
-import { showNext, showPrev } from '../../renderGarage/renderGarage';
 
 export function createGarage(totalNumber: number, page: number) {
   const main = document.querySelector<HTMLElement>('main');
@@ -23,5 +21,4 @@ export function createGarage(totalNumber: number, page: number) {
     </div>
   `;
   main?.append(garage);
-
 }

@@ -1,5 +1,6 @@
 import './selectSettings.css';
 import { update } from '../../actionButtons/buttonsOnCard/buttonsOnCard';
+import { generateCars } from '../../generateCars/generateCars';
 
 export function createCarSettings() {
   const main = document.querySelector<HTMLElement>('main');
@@ -25,14 +26,17 @@ export function createCarSettings() {
   main?.append(settings);
 
   const updateButton = document.querySelector<HTMLButtonElement>('.update-button');
+  const generateButton = document.querySelector<HTMLButtonElement>('.generate-button');
   updateButton?.addEventListener('click', async () => {
-    const [updateInput, updateColor] = ['.update-input', '.update-color'].map((item) =>
-    document.querySelector<HTMLInputElement>(item)
-    );
+    const updateInput = document.querySelector<HTMLInputElement>('.update-input');
+    const updateColor = document.querySelector<HTMLInputElement>('.update-color');
     if (updateInput && updateColor) {
-      const id = JSON.parse(localStorage.getItem('idForUpdate') as string);
-      update(id, updateInput, updateColor);
+      const id = JSON.parse(localStorage.getItem('idForUpdate') as string) as number;
+      await update(id, updateInput, updateColor);
       localStorage.removeItem('idForUpdate');
     }
+  });
+  generateButton?.addEventListener('click', () => {
+    generateCars();
   });
 }

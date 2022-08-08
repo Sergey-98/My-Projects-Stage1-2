@@ -1,4 +1,4 @@
-import { Car } from "../../interfaces/types";
+import { Car } from '../../interfaces/types';
 
 export async function getData(url: string): Promise<Car | Car[] | string> {
   try {
@@ -15,9 +15,7 @@ export async function getData(url: string): Promise<Car | Car[] | string> {
     if (error instanceof Error) {
       console.log('error message: ', error.message);
       return error.message;
-    } else {
-      console.log('unexpected error: ', error);
-      return 'An unexpected error occurred';
     }
   }
+  return '';
 }

@@ -1,0 +1,36 @@
+
+.title-winners {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
+}
+.title-page {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+}
+.winners-table {
+  margin: 3% 0;
+}
+.table-row {
+  display: flex;
+}
+.col {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 13px;
+  border: 1px solid black;
+  text-align: center;
+}
+.col-1 {
+  width: 5%;
+}
+.col-2 {
+  width: 3%;
+}
+.col-3 {
+  width: 5%;
+}
+.col-4 {
+  width: 3%;
+}
+.col-5 {
+  width: 7%;
+}

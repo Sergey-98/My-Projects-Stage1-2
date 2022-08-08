@@ -18,4 +18,4 @@ export type Winners = {
   id: number;
   wins: number;
   time: number;
-}
+};

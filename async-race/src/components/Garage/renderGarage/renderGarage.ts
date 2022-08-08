@@ -3,18 +3,63 @@ import { createCar } from '../createComponents/createGarage/createCars/createCar
 import { setLocalStorage } from '../../localStorage/setLocalStorage';
 import { paginationGarage, slicePageData } from '../pagination/paginationGarage';
 import { getData } from '../garageApi/getData';
-// import { showNextPage }
-// import { showPrevPage }
+import { Car } from '../../interfaces/types';
 
-type Car = {
-  name: string;
-  color: string;
-  id: number;
-};
+export async function renderCards(renderData: Car[], activePage: number) {
+  const cards = document.querySelector<HTMLDivElement>('.cars-in-garage');
+  const pageNumber = document.querySelector<HTMLSpanElement>('.page-number');
+  const count = document.querySelector<HTMLDivElement>('.total-number');
+  if (cards) {
+    cards.innerHTML = '';
+  }
+  if (!renderData && count) {
+    count.innerHTML = '0';
+  } else {
+    renderData.forEach((elem) => {
+      createCar(elem.name, elem.id, elem.color);
+    });
+  }
 
-export function renderGarage(data: Car[]) {
+  const data = (await getData('http://127.0.0.1:3000/garage')) as Car[];
+
+  if (pageNumber && count) {
+    pageNumber.innerHTML = `#${activePage}`;
+    count.innerHTML = String(data.length);
+  }
+}
+
+export async function showNext(activePage: number, data: Car[]) {
+  if (activePage < slicePageData(data, 7).length) {
+    setLocalStorage('activePage', activePage + 1);
+    await renderCards(paginationGarage(data, activePage + 1), activePage + 1);
+  }
+}
+export async function showPrev(activePage: number, data: Car[]) {
+  if (activePage > 1) {
+    setLocalStorage('activePage', activePage - 1);
+    await renderCards(paginationGarage(data, activePage - 1), activePage - 1);
+  }
+}
+
+export function showPaginationButtons() {
+  const next = document.querySelector<HTMLButtonElement>('.next-page');
+  const prev = document.querySelector<HTMLButtonElement>('.prev-page');
+
+  next?.addEventListener('click', async () => {
+    const data = (await getData('http://127.0.0.1:3000/garage')) as Car[];
+    const page = JSON.parse(localStorage.getItem('activePage') as string) as number;
+    await showNext(page, data);
+  });
+  prev?.addEventListener('click', async () => {
+    const data = (await getData('http://127.0.0.1:3000/garage')) as Car[];
+    const page = JSON.parse(localStorage.getItem('activePage') as string) as number;
+    await showPrev(page, data);
+  });
+}
+
+export async function renderGarage(data: Car[]) {
   let activePage: number;
-  const page = JSON.parse(localStorage.getItem('activePage') as string);
+  const page = JSON.parse(localStorage.getItem('activePage') as string) as number;
 
   if (!page) {
     activePage = 1;
@@ -31,56 +76,7 @@ export function renderGarage(data: Car[]) {
   createGarage(data.length, activePage);
 
   const renderData = paginationGarage(data, activePage);
-  renderCards(renderData, activePage);
+  await renderCards(renderData, activePage);
 
   showPaginationButtons();
-}
-
-export async function renderCards(renderData: Car[], activePage: number) {
-  const cards = document.querySelector<HTMLDivElement>('.cars-in-garage');
-  if (cards) {
-    cards.innerHTML = '';
-  }
-  renderData.forEach((elem) => {
-    createCar(elem.name, elem.id, elem.color);
-  });
-  
-  const pageNumber = document.querySelector<HTMLSpanElement>('.page-number');
-  const count = document.querySelector<HTMLDivElement>('.total-number');
-  const data = (await getData('http://127.0.0.1:3000/garage')) as Car[];
-  if(pageNumber && count) {
-    pageNumber.innerHTML = `#${activePage}`;
-    count.textContent = String(data.length);
-  }
-}
-
-export function showPaginationButtons() {
-  const [next, prev] = ['.next-page', '.prev-page'].map((elem) => document.querySelector(elem));
-  
-  next.addEventListener('click', async () => {
-    const data = await getData('http://127.0.0.1:3000/garage') as Car[];
-    const page = JSON.parse(localStorage.getItem('activePage') as string);
-    showNext(page, data);
-  });
-  prev.addEventListener('click', async () => {
-    const data = await getData('http://127.0.0.1:3000/garage') as Car[];
-    const page = JSON.parse(localStorage.getItem('activePage') as string);
-    showPrev(page, data);
-  });
-}
-
-export async function showNext(activePage: number, data: Car[]) {
-  if (activePage < slicePageData(data, 7).length) {
-    activePage += 1;
-    setLocalStorage('activePage', activePage);
-    renderCards(paginationGarage(data, activePage), activePage);
-  }
-}
-export function showPrev(activePage: number, data: Car[]) {
-  if (activePage > 1) {
-    activePage -= 1;
-    setLocalStorage('activePage', activePage);
-    // pagination.innerHTML = '';
-    renderCards(paginationGarage(data, activePage), activePage);
-  }
 }

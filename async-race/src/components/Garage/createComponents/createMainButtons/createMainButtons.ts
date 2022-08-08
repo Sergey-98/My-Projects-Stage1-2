@@ -16,21 +16,19 @@ export function createMainButtons() {
   `;
   main?.append(mainPageButtons);
 
-  const [garage, winners] = ['.garage-button', '.winners-button'].map((elem) => document.querySelector<HTMLButtonElement>(elem));
+  const garage = document.querySelector<HTMLButtonElement>('.garage-button');
+  const winners = document.querySelector<HTMLButtonElement>('.winners-button');
 
-  garage?.addEventListener('click', () => {
-    const body = document.querySelector<HTMLBodyElement>('body');
+  garage?.addEventListener('click', async () => {
     if (body) {
       body.innerHTML = '';
     }
-    appGarage();
+    await appGarage();
   });
-  winners?.addEventListener('click', () => {
-    const body = document.querySelector<HTMLBodyElement>('body');
+  winners?.addEventListener('click', async () => {
     if (body) {
       body.innerHTML = '';
     }
-    appWinners();
+    await appWinners();
   });
-
 }
