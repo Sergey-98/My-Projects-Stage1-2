@@ -52,7 +52,7 @@ const model: string[] = [
   'Jimny',
 ];
 
-function randomNumber(max: number) {
+function getRandomNumber(max: number) {
   return Math.floor(Math.random() * (max + 1));
 }
 
@@ -81,8 +81,8 @@ async function generateOneCard(name: string, color: string) {
 export function generateCars() {
   const countCar = 100;
   for (let i = 0; i < countCar; i += 1) {
-    const stampNum = randomNumber(stamp.length - 1) <= 0 ? 0 : randomNumber(stamp.length - 1);
-    const modelNum = randomNumber(model.length - 1) <= 0 ? 0 : randomNumber(model.length - 1);
+    const stampNum = getRandomNumber(stamp.length - 1) <= 0 ? 0 : getRandomNumber(stamp.length - 1);
+    const modelNum = getRandomNumber(model.length - 1) <= 0 ? 0 : getRandomNumber(model.length - 1);
     const name = `${stamp[stampNum]} ${model[modelNum]}`;
     const color = getRandomColor();
     generateOneCard(name, color).then(
