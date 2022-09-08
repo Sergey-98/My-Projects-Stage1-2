@@ -1,11 +1,15 @@
 import './global.css';
-import { appGarage } from './components/Garage/app/appGarage';
+import { renderAppGarage } from './components/Garage/app/appGarage';
 import { setLocalStorage } from './components/localStorage/setLocalStorage';
-const page = JSON.parse(localStorage.getItem('activePage') as string) as number;
-if (page) {
-  setLocalStorage('activePage', 1);
+
+function initState() {
+  const page = JSON.parse(String(localStorage.getItem('activePage'))) as number;
+  if (page) {
+    setLocalStorage('activePage', 1);
+  }
 }
-appGarage().then(
+initState();
+renderAppGarage().then(
   (result) => result,
   (error: Error) => console.log(error)
 );

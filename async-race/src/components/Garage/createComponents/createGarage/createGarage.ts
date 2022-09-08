@@ -1,7 +1,6 @@
 import './garage.css';
 
 export function createGarage(totalNumber: number, page: number) {
-  const main = document.querySelector<HTMLElement>('main');
   const garage = document.createElement('div');
   garage.classList.add('garage');
   garage.innerHTML = '';
@@ -20,5 +19,5 @@ export function createGarage(totalNumber: number, page: number) {
       <button class = "next-page">Next >>> </button>
     </div>
   `;
-  main?.append(garage);
+  return garage;
 }

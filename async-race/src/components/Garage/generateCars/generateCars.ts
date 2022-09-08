@@ -3,68 +3,13 @@ import { renderCards } from '../renderGarage/renderGarage';
 import { getData } from '../garageApi/getData';
 import { postData } from '../garageApi/postData';
 import { Car } from '../../interfaces/types';
+import { getRandomColor, getRandomNumber } from '../../utils/utils';
+import { stamp, model } from '../../constants/constants';
 
-const stamp: string[] = [
-  'Mersedes',
-  'Lada',
-  'Skoda',
-  'Mitsubishi',
-  'Renault',
-  'Tesla',
-  'Acura',
-  'Daewoo',
-  'Dodge',
-  'Ford',
-  'Volvo',
-  'Subaru',
-  'Volkswagen',
-  'Suzuki',
-  'Opel',
-  'Citroen',
-  'Honda',
-];
-
-const model: string[] = [
-  'amg',
-  'benz',
-  'Granta',
-  'Priora',
-  'Largus',
-  'Vesta',
-  'Lancer',
-  'Pajero',
-  'Outlander',
-  'Logan',
-  'Sandero',
-  'Model S',
-  'Model 3',
-  'Zdx',
-  'Mdz',
-  'Nexia',
-  'Charger',
-  'Focus',
-  'S60',
-  'V60',
-  'Octavia',
-  'Fabia',
-  'Astra',
-  'Polo',
-  'Jimny',
-];
-
-function getRandomNumber(max: number) {
-  return Math.floor(Math.random() * (max + 1));
+function getActivePage() {
+  const activePage = JSON.parse(String(localStorage.getItem('activePage'))) as number;
+  return activePage;
 }
-
-function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (let i = 0; i < 6; i += 1) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-
 async function generateOneCard(name: string, color: string) {
   await postData('http://127.0.0.1:3000/garage', {
     name: name,
@@ -72,7 +17,7 @@ async function generateOneCard(name: string, color: string) {
   });
   const data = (await getData('http://127.0.0.1:3000/garage')) as Car[];
   if (typeof data !== 'string') {
-    const activePage = JSON.parse(localStorage.getItem('activePage') as string) as number;
+    const activePage = getActivePage();
     const renderData = paginationGarage(data, activePage);
     await renderCards(renderData, activePage);
   }

@@ -1,6 +1,10 @@
 import './selectSettings.css';
-import { update } from '../../actionButtons/buttonsOnCard/buttonsOnCard';
+import { updateCarData } from '../../actionButtons/buttonsOnCard/buttonsOnCard';
 import { generateCars } from '../../generateCars/generateCars';
+
+function getIdForUpdate() {
+  return JSON.parse(String(localStorage.getItem('idForUpdate'))) as number;
+}
 
 export function createCarSettings() {
   const main = document.querySelector<HTMLElement>('main');
@@ -31,12 +35,10 @@ export function createCarSettings() {
     const updateInput = document.querySelector<HTMLInputElement>('.update-input');
     const updateColor = document.querySelector<HTMLInputElement>('.update-color');
     if (updateInput && updateColor) {
-      const id = JSON.parse(localStorage.getItem('idForUpdate') as string) as number;
-      await update(id, updateInput, updateColor);
+      const id = getIdForUpdate();
+      await updateCarData(id, updateInput, updateColor);
       localStorage.removeItem('idForUpdate');
     }
   });
-  generateButton?.addEventListener('click', () => {
-    generateCars();
-  });
+  generateButton?.addEventListener('click', generateCars);
 }

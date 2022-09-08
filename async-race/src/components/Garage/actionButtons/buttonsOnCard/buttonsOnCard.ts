@@ -1,24 +1,30 @@
-import { getData } from '../../garageApi/getData';
-import { deleteData } from '../../garageApi/deleteData';
+import { getData, getCar } from '../../garageApi/getData';
+import { deleteCarData } from '../../garageApi/deleteData';
 import { Car, Winners } from '../../../interfaces/types';
 import { putData } from '../../garageApi/putData';
 import { setLocalStorage } from '../../../localStorage/setLocalStorage';
 import { paginationGarage } from '../../pagination/paginationGarage';
 import { renderCards } from '../../renderGarage/renderGarage';
 import { showPaginationButtons } from '../../renderGarage/renderGarage';
-import { deleteData as deleteWin } from '../../../Winners/winnersApi/deleteData';
+import { deleteWinnerData as deleteWin } from '../../../Winners/winnersApi/deleteData';
 import { getData as getWin } from '../../../Winners/winnersApi/getData';
+import { url, colorBlack } from '../../../constants/constants';
+
+function getActivePage() {
+  const activePage = JSON.parse(String(localStorage.getItem('activePage'))) as number;
+  return activePage;
+}
 
 export async function removeCar(id: number) {
-  await deleteData(id);
-  const winners = (await getWin('http://127.0.0.1:3000/winners')) as Winners[];
+  await deleteCarData(id);
+  const winners = (await getWin(`${url}winners`)) as Winners[];
   winners.forEach(async (elem) => {
     if (elem.id === id) {
       await deleteWin(id);
     }
   });
-  const data = (await getData('http://127.0.0.1:3000/garage')) as Car[];
-  let activePage = JSON.parse(localStorage.getItem('activePage') as string) as number;
+  const data = (await getData(`${url}garage`)) as Car[];
+  let activePage = getActivePage();
   let renderData = paginationGarage(data, activePage);
   if (!renderData && data.length > 0) {
     setLocalStorage('activePage', activePage - 1);
@@ -27,30 +33,34 @@ export async function removeCar(id: number) {
     setLocalStorage('activePage', 1);
     renderData = paginationGarage(data, 1);
   }
-  activePage = JSON.parse(localStorage.getItem('activePage') as string) as number;
+  activePage = getActivePage();
   await renderCards(renderData, activePage);
   showPaginationButtons();
 }
-
-export async function selectCar(id: number) {
-  setLocalStorage('idForUpdate', id);
+async function modifyParam(id: number) {
   const updateInput = document.querySelector<HTMLInputElement>('.update-input');
   const updateColor = document.querySelector<HTMLInputElement>('.update-color');
-
-  const data = (await getData(`http://127.0.0.1:3000/garage/${id}`)) as Car;
+  const data = await getCar(id);
   if (updateInput && updateColor) {
     updateInput.value = data.name;
     updateColor.value = data.color;
   }
 }
 
-export async function update(id: number, updateInput: HTMLInputElement, updateColor: HTMLInputElement) {
-  (await putData(`http://127.0.0.1:3000/garage/${id}`, {
+export async function selectCar(id: number) {
+  setLocalStorage('idForUpdate', id);
+  await modifyParam(id);
+}
+async function updateCar(updateInput: HTMLInputElement, updateColor: HTMLInputElement, id: number) {
+  (await putData(`${url}garage/${id}`, {
     name: updateInput?.value,
     color: updateColor?.value,
   })) as Car;
+}
+export async function updateCarData(id: number, updateInput: HTMLInputElement, updateColor: HTMLInputElement) {
+  await updateCar(updateInput, updateColor, id);
 
-  const dataCard = (await getData(`http://127.0.0.1:3000/garage/${id}`)) as Car;
+  const dataCard = (await getData(`${url}garage/${id}`)) as Car;
   const carImg = document.querySelector<HTMLOrSVGImageElement>(`.car-img-${id}`);
   const carName = document.querySelector<HTMLSpanElement>(`.car-name-${id}`);
   const car = document.querySelectorAll<HTMLDivElement>('.car');
@@ -65,7 +75,7 @@ export async function update(id: number, updateInput: HTMLInputElement, updateCo
       const color = document.querySelector<HTMLInputElement>('.update-color');
       if (input && color) {
         input.value = '';
-        color.value = '#000000';
+        color.value = `${colorBlack}`;
       }
     }
   });

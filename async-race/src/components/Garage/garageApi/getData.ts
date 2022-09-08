@@ -1,4 +1,5 @@
 import { Car } from '../../interfaces/types';
+import { url as constUrl } from '../../constants/constants';
 
 export async function getData(url: string): Promise<Car | Car[] | string> {
   try {
@@ -14,8 +15,12 @@ export async function getData(url: string): Promise<Car | Car[] | string> {
   } catch (error) {
     if (error instanceof Error) {
       console.log('error message: ', error.message);
-      return error.message;
+      throw new Error(`Error! status: ${error.message}`);
     }
   }
   return '';
+}
+
+export async function getCar(id: number) {
+  return (await getData(`${constUrl}garage/${id}`)) as Car;
 }

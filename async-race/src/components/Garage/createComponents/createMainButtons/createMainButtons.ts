@@ -1,5 +1,5 @@
 import './mainButtons.css';
-import { appGarage } from '../../app/appGarage';
+import { renderAppGarage } from '../../app/appGarage';
 import { appWinners } from '../../../Winners/app/appWinners';
 
 export function createMainButtons() {
@@ -23,7 +23,7 @@ export function createMainButtons() {
     if (body) {
       body.innerHTML = '';
     }
-    await appGarage();
+    await renderAppGarage();
   });
   winners?.addEventListener('click', async () => {
     if (body) {

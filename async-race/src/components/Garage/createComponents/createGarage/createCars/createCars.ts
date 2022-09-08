@@ -1,7 +1,7 @@
 import './cars.css';
 import { removeCar, selectCar } from '../../../actionButtons/buttonsOnCard/buttonsOnCard';
 
-export function createCar(name: string, id: number, color: string) {
+export function renderCar(name: string, id: number, color: string) {
   const carsInGarage = document.querySelector<HTMLDivElement>('.cars-in-garage');
   const car = document.createElement('div');
   car.classList.add('car');
